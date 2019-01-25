@@ -11,6 +11,7 @@ import { EficienciaPage } from '../pages/eficiencia/eficiencia';
 import { LoginPage } from '../pages/login/login';
 import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
 import { PerfilPage } from '../pages/perfil/perfil';
+import {TabsPage} from "../pages/tabs/tabs";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PerfilPage } from '../pages/perfil/perfil';
     EficienciaPage,
     LoginPage,
     TiempoExtraPage,
-    PerfilPage
+    PerfilPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { PerfilPage } from '../pages/perfil/perfil';
     PerfilPage,
     LoginPage,
     TiempoExtraPage,
-    EficienciaPage
+    EficienciaPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
