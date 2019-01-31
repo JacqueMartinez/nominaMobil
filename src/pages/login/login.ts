@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PerfilPage } from '../perfil/perfil';
 
 /**
  * Generated class for the LoginPage page.
@@ -23,7 +24,7 @@ export class LoginPage {
   }
 
   iraPerfil(){
-    this.navCtrl.setRoot(LoginPage);
+    this.navCtrl.setRoot(PerfilPage);
   }
 
 }
