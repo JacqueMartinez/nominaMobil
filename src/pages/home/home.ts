@@ -11,4 +11,8 @@ export class HomePage {
 
   }
 
+  navegarALogin(){
+    this.navCtrl.push('LoginPage');
+  }
+
 }
