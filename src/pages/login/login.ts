@@ -22,4 +22,8 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  iraPerfil(){
+    this.navCtrl.setRoot(LoginPage);
+  }
+
 }
