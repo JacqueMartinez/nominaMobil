@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
 import { PerfilPage } from '../pages/perfil/perfil';
 import {TabsPage} from "../pages/tabs/tabs";
+import { RecuperarPasswordPage } from '../pages/recuperar-password/recuperar-password';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,12 @@ import {TabsPage} from "../pages/tabs/tabs";
     LoginPage,
     TiempoExtraPage,
     PerfilPage,
-    TabsPage
+    TabsPage,
+    RecuperarPasswordPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +39,8 @@ import {TabsPage} from "../pages/tabs/tabs";
     LoginPage,
     TiempoExtraPage,
     EficienciaPage,
-    TabsPage
+    TabsPage,
+    RecuperarPasswordPage
   ],
   providers: [
     StatusBar,
