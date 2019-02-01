@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password';
+import { PerfilPage } from '../perfil/perfil';
 
 /**
  * Generated class for the LoginPage page.
