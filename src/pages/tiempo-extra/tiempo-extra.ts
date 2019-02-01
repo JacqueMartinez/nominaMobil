@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TiempoExtraPage {
   semana: string = "Semana:";
-
+  loadProgress: any = null;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
