@@ -13,13 +13,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-recuperar-password',
   templateUrl: 'recuperar-password.html',
 })
+
 export class RecuperarPasswordPage {
+
+  passwordType: string = 'password';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RecuperarPasswordPage');
+  }
+
+  public verPassword(){
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PerfilPage } from '../perfil/perfil';
 import { TabsPage } from '../tabs/tabs';
+import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password';
 
 /**
  * Generated class for the LoginPage page.
@@ -17,7 +17,13 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
+  passwordType: string = 'password';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  public verPassword(){
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
   }
 
   ionViewDidLoad() {
@@ -26,6 +32,10 @@ export class LoginPage {
 
   iraPerfil(){
     this.navCtrl.setRoot(TabsPage);
+  }
+
+  iraRecuperar(){
+    this.navCtrl.setRoot(RecuperarPasswordPage);
   }
 
 }
