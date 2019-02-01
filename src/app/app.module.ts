@@ -14,6 +14,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import {TabsPage} from "../pages/tabs/tabs";
 import { RecuperarPasswordPage } from '../pages/recuperar-password/recuperar-password';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +45,8 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
     TiempoExtraPage,
     EficienciaPage,
     TabsPage,
-    RecuperarPasswordPage
+    RecuperarPasswordPage,
+    ProgressBarComponent
   ],
   providers: [
     StatusBar,

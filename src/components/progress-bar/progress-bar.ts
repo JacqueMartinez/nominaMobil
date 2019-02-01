@@ -12,7 +12,7 @@ import { Component,Input } from '@angular/core';
 })
 export class ProgressBarComponent {
 
-  @Input('progress') progress;
+  @Input('progress') progress: any;
 
   constructor() {
 
