@@ -1,1 +1,49 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar color="menu">
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-3>
+                        <img src="https://avatars0.githubusercontent.com/u/14170848?s=400&v=4" alt="" id="img">
+                    </ion-col>
+                    <ion-col col-9>
+                        <ion-row>
+                            <ion-col class="titulo">
+                                Hera Movil
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col class="nombre">
+                                Brandon Vargas Bolaños Martinez Perez
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-item *ngFor="let item of iconos">
+            <ion-row>
+                <ion-col col-3 id="iconos">
+                    <ion-icon name="{{item.icono}}"></ion-icon>
+                </ion-col>
+                <ion-col col-9>
+                    <ion-row>
+                        <ion-col id="texto">
+                            {{item.concepto}}
+                            <br><span class="importe">{{item.importe}}</span>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+
+        <button ion-button full color="title" id="loguot">Cerrar Sesión</button>
+    </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
