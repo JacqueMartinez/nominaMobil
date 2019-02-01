@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the EficienciaPage page.
+ * Generated class for the RecuperarPasswordPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,19 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-eficiencia',
-  templateUrl: 'eficiencia.html',
+  selector: 'page-recuperar-password',
+  templateUrl: 'recuperar-password.html',
 })
-export class EficienciaPage {
-  semana: string = "Semana:";
+export class RecuperarPasswordPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EficienciaPage');
+    console.log('ionViewDidLoad RecuperarPasswordPage');
   }
 
 }
