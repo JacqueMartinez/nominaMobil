@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PerfilPage } from '../perfil/perfil';
-import { TabsPage } from '../tabs/tabs';
 
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the RecuperarPasswordPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,20 +10,16 @@ import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-recuperar-password',
+  templateUrl: 'recuperar-password.html',
 })
-export class LoginPage {
+export class RecuperarPasswordPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
-
-  iraPerfil(){
-    this.navCtrl.setRoot(TabsPage);
+    console.log('ionViewDidLoad RecuperarPasswordPage');
   }
 
 }

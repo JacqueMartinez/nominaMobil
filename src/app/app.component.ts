@@ -6,12 +6,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import {TabsPage} from "../pages/tabs/tabs";
+import { RecuperarPasswordPage } from '../pages/recuperar-password/recuperar-password';
+import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = TabsPage;
+  rootPage:any = LoginPage;
 
   pages : Array<{title: string, component: any}>;
   iconos:Array<{icono: string, concepto: string, importe: string}>;
@@ -44,4 +46,3 @@ export class MyApp {
     this.nav.setRoot(page.component)
   }
 }
-

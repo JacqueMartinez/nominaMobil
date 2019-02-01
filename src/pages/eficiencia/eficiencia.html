@@ -6,13 +6,37 @@
 -->
 <ion-header>
 
-  <ion-navbar color="title">
-    <ion-title>Eficiencia</ion-title>
-  </ion-navbar>
+    <ion-navbar color="title">
+        <ion-title>Eficiencia</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
+<ion-content padding class="backgroundcolor">
+    <ion-list>
+        <ion-item>
+            <ion-label>Semana:</ion-label>
+            <ion-select [(ngModel)]="semana" cancelText="Cancelar" okText="Ok">
+                <ion-option value="n1">Numero 1</ion-option>
+                <ion-option value="n2">Numero 2</ion-option>
+                <ion-option value="n3">Numero 3</ion-option>
+                <ion-option value="n4">Numero 4</ion-option>
+                <ion-option value="n5" selected="true">Numero 5</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
 
-<ion-content padding>
+
+    <h3>Lunes</h3>
+    <progress-bar [progress]="loadProgress"></progress-bar>
+    <h3>Martes</h3>
+    <progress-bar [progress]="loadProgress"></progress-bar>
+    <h3>Miercoles</h3>
+    <progress-bar [progress]="loadProgress"></progress-bar>
+    <h3>Jueves</h3>
+    <progress-bar [progress]="loadProgress"></progress-bar>
+    <h3>Viernes</h3>
+    <progress-bar [progress]="loadProgress"></progress-bar>
+
 
 </ion-content>

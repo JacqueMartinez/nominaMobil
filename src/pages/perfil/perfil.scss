@@ -1,1 +1,57 @@
-page-perfil {}
+page-perfil {
+    .pomodoro {
+        position: relative;
+        background: white;
+        height: 300px;
+        color: white;
+    }
+    .sueldo {
+        text-align: center
+    }
+    .centrado {
+        text-align: center;
+    }
+    .sueldo.sueldo1 {
+        text-align: center;
+    }
+    .sueldo1 {
+        text-align: center;
+    }
+    .input-label {
+        text-align: center;
+    }
+    .pomodoro {
+        text-align: center
+    }
+    .input-label {
+        color: #203257;
+        text-align: center;
+        font-weight: 1000;
+    }
+    .input-label2 {
+        color: #203257;
+        text-align: center;
+    }
+    .sueldo2 {
+        text-align: center;
+    }
+    img {
+        border-radius: 50%
+    }
+    .nombreEmpleado {
+        text-align: center;
+        padding-top: 15px;
+    }
+    #bloque {
+        margin-left: auto;
+        margin-right: auto;
+        height: 170px;
+        width: 170px;
+        padding-bottom: 10px;
+    }
+    .input-label3 {
+        text-align: center;
+        color: #203257;
+        font-weight: 1000;
+    }
+}

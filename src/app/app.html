@@ -1,7 +1,6 @@
 <ion-menu [content]="content">
     <ion-header>
         <ion-toolbar color="menu">
-
             <ion-grid>
                 <ion-row>
                     <ion-col col-3>
@@ -21,8 +20,6 @@
                     </ion-col>
                 </ion-row>
             </ion-grid>
-
-
         </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -42,8 +39,13 @@
             </ion-row>
         </ion-item>
 
-        <button ion-button full color="title" id="loguot">Cerrar Sesión</button>
+
     </ion-content>
+    <ion-footer class="p-0 m-0">
+        <button ion-button full end color="title" id="loguot" class="p-0">Cerrar Sesión</button>
+    </ion-footer>
 </ion-menu>
+
+
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
