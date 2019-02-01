@@ -14,6 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'eficiencia.html',
 })
 export class EficienciaPage {
+  semana: string = "Semana:";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
