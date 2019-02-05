@@ -1,9 +1,4 @@
-<!--
-  Generated template for the EficienciaPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
     <ion-navbar color="title">
@@ -13,30 +8,49 @@
 </ion-header>
 
 <ion-content padding class="backgroundcolor">
-    <ion-list>
+    <div>
+            <ion-item>
+                Lunes
+                <ion-badge color="secondary"item-end>$100.00</ion-badge>
+            </ion-item>
+            <progress-bar [progress]=70></progress-bar>
+    </div>
+    <div>
         <ion-item>
-            <ion-label>Semana:</ion-label>
-            <ion-select [(ngModel)]="semana" cancelText="Cancelar" okText="Ok">
-                <ion-option value="n1">Numero 1</ion-option>
-                <ion-option value="n2">Numero 2</ion-option>
-                <ion-option value="n3">Numero 3</ion-option>
-                <ion-option value="n4">Numero 4</ion-option>
-                <ion-option value="n5" selected="true">Numero 5</ion-option>
-            </ion-select>
+            Martes
+            <ion-badge color="secondary"item-end>$100.00</ion-badge>
         </ion-item>
-    </ion-list>
-
-
-  <H4>Lunes</H4>
-  <progress-bar [progress]="50"></progress-bar>
-  <H4>Martes</H4>
-  <progress-bar [progress]="25"></progress-bar>
-  <H4>Miercoles</H4>
-  <progress-bar [progress]="63"></progress-bar>
-  <H4>Jueves</H4>
-  <progress-bar [progress]="55"></progress-bar>
-  <H4>Viernes</H4>
-  <progress-bar [progress]="25"></progress-bar>
-
-
+        <progress-bar [progress]=70></progress-bar>
+    </div>
+    <div>
+        <ion-item>
+            Miercoles
+            <ion-badge color="secondary"item-end>$100.00</ion-badge>
+        </ion-item>
+        <progress-bar [progress]=70></progress-bar>
+    </div>
+    <div>
+        <ion-item>
+            Jueves
+            <ion-badge color="secondary"item-end>$100.00</ion-badge>
+        </ion-item>
+        <progress-bar [progress]=70></progress-bar>
+    </div>
+    <div>
+        <ion-item>
+            Viernes
+            <ion-badge color="secondary"item-end>$100.00</ion-badge>
+        </ion-item>
+        <progress-bar [progress]=70></progress-bar>
+    </div>
+    <div>
+        <ion-item>
+           Total
+            <ion-badge color="secondary"item-end>$500.00</ion-badge>
+        </ion-item>
+        
+    </div>
+   
+   
+    
 </ion-content>
