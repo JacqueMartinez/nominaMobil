@@ -1,5 +1,7 @@
 {
   "name": "NominaMovil",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
