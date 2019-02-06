@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password';
 import { PerfilPage } from '../perfil/perfil';
@@ -20,7 +20,8 @@ export class LoginPage {
 
   passwordType: string = 'password';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private menuController: MenuController) {
   }
 
   public verPassword(){
@@ -38,5 +39,11 @@ export class LoginPage {
   iraRecuperar(){
     this.navCtrl.setRoot(RecuperarPasswordPage);
   }
+  ionViewDidEnter() {
+    this.menuController.enable(false);
+  }
 
+  ionViewDidLeave() {
+    this.menuController.enable(true);
+  }
 }
