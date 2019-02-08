@@ -1,32 +1,80 @@
 <ion-header>
   <ion-navbar color="title">
-    <ion-title>Tiempo extra</ion-title>
+    <ion-title>Horas extra</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding class="backgroundcolor">
-  <ion-list>
-    <ion-item >
-      <ion-label>Semana:</ion-label>
-      <ion-select [(ngModel)]="semana" cancelText="Cancelar" okText="Ok">
-        <ion-option value="n1">Numero 1</ion-option>
-        <ion-option value="n2">Numero 2</ion-option>
-        <ion-option value="n3">Numero 3</ion-option>
-        <ion-option value="n4">Numero 4</ion-option>
-        <ion-option value="n5" selected="true">Numero 5</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
+  <ion-grid fixed>
+    <ion-row class="header">
+      <ion-col size="4" class="contenido">
+        <p class="titulos">Dia</p>
+      </ion-col>
+      <ion-col size="4" class="centrarHead">
+        <p class="titulos">Dobles</p>
+      </ion-col>
+      <ion-col size="4" class="centrarHead">
+        <p class="titulos">Triples</p>
+      </ion-col>
+    </ion-row>
 
-  <H4 class="pbar">Lunes</H4>
-  <progress-bar [progress]="50"></progress-bar>
-  <H4 class="pbar">Martes</H4>
-  <progress-bar [progress]="25"></progress-bar>
-  <H4 class="pbar">Miercoles</H4>
-  <progress-bar [progress]="63"></progress-bar>
-  <H4 class="pbar">Jueves</H4>
-  <progress-bar [progress]="55"></progress-bar>
-  <H4 class="pbar">Viernes</H4>
-  <progress-bar [progress]="25"></progress-bar>
+    <ion-row *ngFor="let dia of diasSemana" class="lista">
+        <ion-col size="4" class="contenido">
+          <p class="diasSemana">{{dia.dia}}</p>
+        </ion-col>
+        <ion-col size="4" class="centrarHead">
+          <p class="dias">{{dia.dobles}}</p>
+        </ion-col>
+        <ion-col size="4" class="centrarHead">
+          <p class="dias">{{dia.triples}}</p>
+        </ion-col>
+      </ion-row>
 
+      <ion-row>
+        <ion-col size="4" class="contenido">
+          <p class="diasSemana">Total</p>
+        </ion-col>
+        <ion-col size="4" class="centrarHead">
+          <p class="dias">23</p>
+        </ion-col>
+        <ion-col size="4" class="centrarHead">
+          <p class="dias">27</p>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="totales">
+        <ion-col size="6">
+          <ion-row>
+            <ion-col col-3>
+              <ion-icon name="alarm" style="font-size: 35px;"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+              <span class="diasSemana">Total dobles:</span>
+              <p style="margin: 0px; text-align: center">$ 950.00</p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="6">
+          <ion-row>
+            <ion-col col-3>
+              <ion-icon name="alarm" style="font-size: 35px;"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+              <span class="diasSemana">Total Triples:</span>
+              <p style="margin: 0px; text-align: center">$ 950.00</p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+
+        </ion-col>
+        <ion-col size="6">
+          <p class="importeHoras cantidad">$ 1900.00</p>
+          <p style="margin: 0px; text-align: right">Importe total</p>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
 </ion-content>

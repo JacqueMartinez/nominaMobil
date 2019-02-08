@@ -17,6 +17,7 @@ import { TiempoExtraPageModule } from '../tiempo-extra/tiempo-extra.module';
   templateUrl: 'perfil.html',
 })
 export class PerfilPage {
+  semana: string = 'actual';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController ) {
   }
@@ -39,13 +40,13 @@ showSem() {
   alert.addInput({
     type: 'radio',
     label: 'Semana Actual',
-    value: 'sem05',
-    checked: true
+    value: 'actual',
+    checked: false,
   });
   alert.addInput({
     type: 'radio',
-    label: 'Semana Pasaba',
-    value: 'sem04',
+    label: 'Semana Pasada',
+    value: 'pasada',
     checked: false
   });
 
@@ -55,7 +56,7 @@ showSem() {
     handler: data => {
       // this.testRadioOpen = false;
       // this.testRadioResult = data;
-      console.log(data)
+      this.semana = data;
     }
   });
   alert.present();
