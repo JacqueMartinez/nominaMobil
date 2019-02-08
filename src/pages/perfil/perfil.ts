@@ -41,7 +41,7 @@ showSem() {
     type: 'radio',
     label: 'Semana Actual',
     value: 'actual',
-    checked: false,
+    checked: true,
   });
   alert.addInput({
     type: 'radio',
