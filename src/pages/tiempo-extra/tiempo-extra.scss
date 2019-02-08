@@ -39,7 +39,7 @@
   text-align: right;
 }
 .cantidad {
-  margin-top: 25px;
+  margin-top: 20px;
   margin-bottom: 0px;
   font-weight: bold;
   font-size: 20px;
@@ -48,4 +48,12 @@
 .totales{
   margin-top: 20px;
 }
-
+.subtotales {
+  margin: 0px;
+  text-align: center;
+  color: white;
+  background-color: #0DE568;
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px
+}
