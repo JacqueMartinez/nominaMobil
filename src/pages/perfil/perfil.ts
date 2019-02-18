@@ -19,8 +19,9 @@ import { AutenticationProvider } from '../../providers/autentication/autenticati
 })
 export class PerfilPage {
   semana: string = 'actual';
-  displayName: string;
+  idEmpleado: string;
   empleado:  any= [];
+  URLFoto: string;
 
   constructor(public autenticationProvider: AutenticationProvider, public navCtrl: NavController,
     public navParams: NavParams, public alertCtrl: AlertController, public empleadoProvider: EmpleadoProvider) {
@@ -31,12 +32,10 @@ export class PerfilPage {
   }
 
   async iniciarEmpleado() {
-    await this.autenticationProvider.getStatus().subscribe(datos => { this.displayName = datos.displayName });
-    await this.empleadoProvider.getEmpleado(parseInt(this.displayName)).valueChanges().subscribe((datos) => {this.empleado = datos});
-     await this.empleadoProvider.getURL(this.displayName+ '.jpg').subscribe(datos=>{console.log(datos); 
-     });
+    await this.autenticationProvider.getStatus().subscribe(datos => { this.idEmpleado = datos.displayName });
+    await this.empleadoProvider.getEmpleado(parseInt(this.idEmpleado)).valueChanges().subscribe((datos) => {this.empleado = datos});
+    await this.empleadoProvider.getURL(this.idEmpleado+ '.jpg').subscribe(datos=>{this.URLFoto = datos});
  
-    
   }
 
   ionViewDidLoad() {

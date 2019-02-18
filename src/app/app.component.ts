@@ -5,8 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from "../pages/tabs/tabs";
-import { RecuperarPasswordPage } from '../pages/recuperar-password/recuperar-password';
 import { LoginPage } from '../pages/login/login';
 import { AutenticationProvider } from '../providers/autentication/autentication';
 import { EmpleadoProvider } from '../providers/empleado/empleado';
@@ -34,14 +32,6 @@ export class MyApp {
       splashScreen.hide();
     });
 
-    var notificationOpenedCallback = function(jsonData) {
-      console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
-    };
-
-    window["plugins"].OneSignal
-      .startInit("351f780c-3098-44f5-9ba4-07b05334b2d9", "nominamovil-71523")
-      .handleNotificationOpened(notificationOpenedCallback)
-      .endInit();
   
 
     this.pages = [{
