@@ -3,9 +3,9 @@
     <div class="login-content">
         <!-- Logo -->
         <div padding-horizontal text-center class="animated fadeInDown">
-          <div class="logo in">
-            <img src = "../../assets/imgs/logo1.png">
-          </div>
+            <div class="logo in">
+                <img src="../../assets/imgs/logo1.png">
+            </div>
         </div>
 
         <!-- Login form
@@ -21,34 +21,36 @@
         <form class="list-form logincaja">
             <ion-grid>
                 <ion-row>
-                  <ion-col col-12>
-                      <ion-item class="logincaja">
-                          <ion-label floating>
-                              <p class="links"><ion-icon name="person" item-start class="dark" color="dark"></ion-icon>Usuario</p>
-                          </ion-label>
-                          <ion-input type="text"></ion-input>
+                    <ion-col col-12>
+                        <ion-item class="logincaja">
+                            <ion-label floating>
+                                <p class="links">
+                                    <ion-icon name="person" item-start class="dark" color="dark"></ion-icon>Usuario</p>
+                            </ion-label>
+                            <ion-input type="text" [(ngModel)]="usuario.email" name="user">{{passwordType}}</ion-input>
                         </ion-item>
-                  </ion-col>
+                    </ion-col>
                 </ion-row>
-              </ion-grid>
+            </ion-grid>
         </form>
 
         <form class="list-form logincaja">
             <ion-grid>
                 <ion-row>
-                  <ion-col col-11>
-                      <ion-item class="logincaja">
-                          <ion-label floating>
-                              <p class="links"><ion-icon name="lock" item-start class="dark" color="dark"></ion-icon>Contrasena</p>
-                          </ion-label>
-                          <ion-input [type]="passwordType" clearOnEdit="false"></ion-input>
+                    <ion-col col-11>
+                        <ion-item class="logincaja">
+                            <ion-label floating>
+                                <p class="links">
+                                    <ion-icon name="lock" item-start class="dark" color="dark"></ion-icon>Contrasena</p>
+                            </ion-label>
+                            <ion-input [type]="passwordType" clearOnEdit="false" [(ngModel)]="usuario.password" name="password"></ion-input>
                         </ion-item>
-                  </ion-col>
-                  <ion-col col-1>
-                      <ion-icon class="alinear" name="eye" color="dark" (click)="verPassword()" item-end></ion-icon>
-                  </ion-col>
+                    </ion-col>
+                    <ion-col col-1>
+                        <ion-icon class="alinear" name="eye" color="dark" (click)="verPassword()" item-end></ion-icon>
+                    </ion-col>
                 </ion-row>
-              </ion-grid>
+            </ion-grid>
         </form>
 
         <!--<form>
@@ -62,7 +64,7 @@
         </form>-->
 
         <div text-right margin-top class="links">
-          <span ion-text color="white" tappable>¿Olvidaste tu contraseña?
+            <span ion-text color="white" tappable>¿Olvidaste tu contraseña?
             <strong (click)="iraRecuperar()">¡AQUI!</strong>
           </span>
         </div>
@@ -77,12 +79,12 @@
                 </ion-col>
 
                 <ion-col col-6>
-                    <button ion-button block color="dark" outline (click)="iraPerfil()">
+                    <button ion-button block color="dark" outline (click)="iniciarSesion()">
                         <ion-icon name="log-in"></ion-icon>
                         <p>&nbsp; Iniciar</p>
                     </button>
                 </ion-col>
-              </ion-row>
+            </ion-row>
         </div>
 
 
@@ -93,10 +95,10 @@
         </div>-->
 
 
-      </div>
+    </div>
 
 </ion-content>
 
 <ion-footer class="footer">
-  <p>HERA APPAREL TEHUACAN</p>
+    <p>HERA APPAREL TEHUACAN</p>
 </ion-footer>

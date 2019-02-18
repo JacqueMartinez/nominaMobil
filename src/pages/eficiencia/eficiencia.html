@@ -1,4 +1,3 @@
-
 <ion-header>
 
     <ion-navbar color="title">
@@ -8,49 +7,18 @@
 </ion-header>
 
 <ion-content padding class="backgroundcolor">
-    <div>
-            <ion-item>
-                Lunes
-                <ion-badge color="secondary"item-end>$100.00</ion-badge>
-            </ion-item>
-            <progress-bar [progress]=70></progress-bar>
+    <div *ngFor="let dia of diasSemana">
+        <ion-item>
+            {{dia.dia}}
+            <ion-badge color="secondary" item-end>$ {{dia.importe}}</ion-badge>
+        </ion-item>
+        <progress-bar [progress]=[dia.eficiencia]></progress-bar>
     </div>
+
     <div>
         <ion-item>
-            Martes
-            <ion-badge color="secondary"item-end>$100.00</ion-badge>
+            Total
+            <ion-badge color="secondary" item-end>${{total}}</ion-badge>
         </ion-item>
-        <progress-bar [progress]=70></progress-bar>
     </div>
-    <div>
-        <ion-item>
-            Miercoles
-            <ion-badge color="secondary"item-end>$100.00</ion-badge>
-        </ion-item>
-        <progress-bar [progress]=70></progress-bar>
-    </div>
-    <div>
-        <ion-item>
-            Jueves
-            <ion-badge color="secondary"item-end>$100.00</ion-badge>
-        </ion-item>
-        <progress-bar [progress]=70></progress-bar>
-    </div>
-    <div>
-        <ion-item>
-            Viernes
-            <ion-badge color="secondary"item-end>$100.00</ion-badge>
-        </ion-item>
-        <progress-bar [progress]=70></progress-bar>
-    </div>
-    <div>
-        <ion-item>
-           Total
-            <ion-badge color="secondary"item-end>$500.00</ion-badge>
-        </ion-item>
-        
-    </div>
-   
-   
-    
 </ion-content>
