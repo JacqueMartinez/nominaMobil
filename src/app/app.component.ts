@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AutenticationProvider } from '../providers/autentication/autentication';
 import { EmpleadoProvider } from '../providers/empleado/empleado';
+import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
 
 
 @Component({
@@ -32,7 +33,7 @@ export class MyApp {
       splashScreen.hide();
     });
 
-  
+
 
     this.pages = [{
       title: 'Home', component: HomePage
@@ -49,7 +50,7 @@ export class MyApp {
       { icono: "leaf", concepto: 'Dia Festivo:', importe: '$ 1300.40' }
     ];
 
-    // this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
+    //this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
 
     this.autenticationProvider.getStatus().subscribe(datos => {
       this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
