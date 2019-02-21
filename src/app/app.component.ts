@@ -51,13 +51,13 @@ export class MyApp {
 
     // this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
 
-    this.autenticationProvider.getStatus().subscribe(datos => {
+    /*  this.autenticationProvider.getStatus().subscribe(datos => {
       this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
         this.empleado = informacion;
         console.log(this.empleado);
       })
     });
-    console.log('displayname'+this.empleado.displayname)
+    console.log('displayname'+this.empleado.displayname) */
 
 
   }
