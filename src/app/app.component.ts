@@ -52,14 +52,25 @@ export class MyApp {
     // this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
 
     this.autenticationProvider.getStatus().subscribe(datos => {
-      this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
-        this.empleado = informacion;
-        console.log(this.empleado);
-      })
+      if(datos!=null){
+        // this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
+        //   this.empleado = informacion;
+        //   console.log(this.empleado);
+        //   console.log('displayname'+this.empleado.displayname); })
+        this.obtenerDatos(datos.displayName);
+      }
     });
-    console.log('displayname'+this.empleado.displayname)
 
+  }
 
+  async obtenerDatos(displayName){
+    await this.empleadoProvider.getEmpleado(displayName).valueChanges().subscribe((informacion)=>{
+      this.empleado = informacion;
+
+       console.log(displayName);
+    })
+    await console.log(this.empleado);
+    
   }
   openPage(page) {
     this.nav.setRoot(page.component)
