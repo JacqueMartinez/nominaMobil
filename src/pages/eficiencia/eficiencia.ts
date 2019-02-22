@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EmpleadoProvider } from '../../providers/empleado/empleado';
+import { AutenticationProvider } from '../../providers/autentication/autentication';
 
 
 /**
@@ -15,26 +17,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'eficiencia.html',
 })
 export class EficienciaPage {
-  diasSemana: any = [
-    {dia: 'Lunes', eficiencia: 70, importe: 70.45},
-    {dia: 'Martes', eficiencia: 75, importe: 75.00},
-    {dia: 'Miercoles', eficiencia: 80, importe: 80.00},
-    {dia: 'Jueves', eficiencia: 85, importe: 85.00},
-    {dia: 'Viernes', eficiencia: 90, importe: 90.00},
-    ];
-   
-    total: number = 0;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+    total: number = 0;
+    idEmpleado: string;
+    empleado:  any= [];
+
+    diasSemana: any = [
+      {dia: 'Lunes', importe: 70.45},
+      {dia: 'Martes', importe: 75.00},
+      {dia: 'Miercoles',  importe: 80.00},
+      {dia: 'Jueves',  importe: 85.00},
+      {dia: 'Viernes',  importe: 90.00},
+      ];
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public autenticationProvider: AutenticationProvider, public empleadoProvider: EmpleadoProvider) {
     this.diasSemana.forEach(element => {
       this.total += element.importe;
    });
+   this.iniciarEmpleado();
+
+  
   }
+  async iniciarEmpleado() {
+    await this.autenticationProvider.getStatus().subscribe(datos => { this.idEmpleado = datos.displayName });
+    await this.empleadoProvider.getEmpleado(parseInt(this.idEmpleado)).valueChanges().subscribe((datos) => {this.empleado = datos});
 
-
-
+  }
+ 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EficienciaPage');
+    
   }
 
+ 
+      
 }
