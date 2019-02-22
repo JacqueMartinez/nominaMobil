@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { AutenticationProvider } from '../providers/autentication/autentication';
 import { EmpleadoProvider } from '../providers/empleado/empleado';
 import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
+import { EficienciaPage } from '../pages/eficiencia/eficiencia';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = LoginPage;
+  rootPage: any = EficienciaPage;
 
   pages: Array<{ title: string, component: any }>;
   iconos: Array<{ icono: string, concepto: string, importe: string }>;
@@ -50,17 +51,17 @@ export class MyApp {
       { icono: "leaf", concepto: 'Dia Festivo:', importe: '$ 1300.40' }
     ];
 
-    //this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
-
-    /*  this.autenticationProvider.getStatus().subscribe(datos => {
+    this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
+ 
+      this.autenticationProvider.getStatus().subscribe(datos => {
       this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
         this.empleado = informacion;
         console.log(this.empleado);
       })
     });
-    console.log('displayname'+this.empleado.displayname) */
+    console.log('displayname'+this.empleado.displayname) 
 
-
+ 
   }
   openPage(page) {
     this.nav.setRoot(page.component)
