@@ -4,7 +4,7 @@ import { AutenticationProvider } from '../../providers/autentication/autenticati
 import { EmpleadoProvider } from '../../providers/empleado/empleado';
 
 /**
- * Generated class for the MenuPage page.
+ * Generated class for the BonosPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,19 +12,18 @@ import { EmpleadoProvider } from '../../providers/empleado/empleado';
 
 @IonicPage()
 @Component({
-  selector: 'page-menu',
-  templateUrl: 'menu.html',
+  selector: 'page-bonos',
+  templateUrl: 'bonos.html',
 })
-
-
-export class MenuPage {
-  iconos: Array<{ icono: string, concepto: string, importe: string }>;
+export class BonosPage {
   empleado: any={
     BonoProduccion:null
   };
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public autenticationProvider: AutenticationProvider, public empleadoProvider: EmpleadoProvider) {
+
+  iconos: Array<{ icono: string, concepto: string, importe: string }>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public autenticationProvider: AutenticationProvider,
+    public empleadoProvider: EmpleadoProvider) {
     this.iconos = [
       { icono: "flag", concepto: 'Bono de Produccion:', importe: this.empleado.BonoProduccion },
       { icono: "flash", concepto: 'Bono de Rendimiento:', importe: '$ 1300.40' },
@@ -35,9 +34,8 @@ export class MenuPage {
       { icono: "leaf", concepto: 'Dia Festivo:', importe: '$ 1300.40' }
     ];
 
-     // this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
 
-     this.autenticationProvider.getStatus().subscribe(datos => {
+    this.autenticationProvider.getStatus().subscribe(datos => {
       if(datos!=null){
         // this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
         //   this.empleado = informacion;
@@ -46,21 +44,20 @@ export class MenuPage {
         this.obtenerDatos(datos.displayName);
       }
     });
-
-
   }
 
   async obtenerDatos(displayName){
     await this.empleadoProvider.getEmpleado(displayName).valueChanges().subscribe((informacion)=>{
       this.empleado = informacion;
+
        console.log(displayName);
     })
     await console.log(this.empleado);
+    
   }
-  
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
+    console.log('ionViewDidLoad BonosPage');
   }
 
 }

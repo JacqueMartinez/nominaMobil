@@ -5,54 +5,20 @@
 </ion-header>
 
 <ion-content padding class="backgroundcolor">
-    <div>
-            <ion-item>
-                    {{diasSemana[0].dia}}
-                    <ion-badge color="secondary" item-end>$ {{diasSemana[0].importe}} </ion-badge>
-            </ion-item>
-            <progress-bar [progress]=[empleado.Efi_Lunes]></progress-bar>
-    </div>
-    <div>
-            <ion-item>
-                    {{diasSemana[1].dia}}
-                    <ion-badge color="secondary" item-end>$ {{diasSemana[1].importe}}</ion-badge>
-            </ion-item>
-            <progress-bar [progress]=[empleado.Efi_Martes]></progress-bar>
-    </div>
-    <div>
-            <ion-item>
-                    {{diasSemana[2].dia}}
-                    <ion-badge color="secondary" item-end>$ {{diasSemana[2].importe}}</ion-badge>
-            </ion-item>
-            <progress-bar [progress]=[empleado.Efi_Miercoles]></progress-bar>
-    </div>
-    <div>
-            <ion-item>
-                    {{diasSemana[3].dia}}
-                    <ion-badge color="secondary" item-end>$ {{diasSemana[3].importe}}</ion-badge>
-            </ion-item>
-            <progress-bar [progress]=[empleado.Efi_Jueves]></progress-bar>
-    </div>
-    <div>
-            <ion-item>
-                    {{diasSemana[4].dia}}
-                    <ion-badge color="secondary" item-end>$ {{diasSemana[4].importe}}</ion-badge>
-            </ion-item>
-            <progress-bar [progress]=[empleado.Efi_Viernes]></progress-bar>
-    </div>
-    <div>
-            <ion-item>
-                    Total: 
-                <ion-badge color="secondary" item-end>${{total}}</ion-badge>
-            </ion-item>
-    </div>
-    <!-- <div *ngFor="let dia of diasSemana">
+    <div *ngFor="let dia of diasSemana">
         <ion-item>
             {{dia.dia}}
-            <ion-badge color="secondary" item-end>$ {{dia.importe}}</ion-badge>
+            <ion-badge color="secondary" item-end>{{dia.importe}}</ion-badge>
+
         </ion-item>
-            <progress-bar *ngIf="dia.dia == 'Lunes'" [progress]=[empleado.Efi_Lunes]></progress-bar>
-            
-    </div> -->
-   
+        <progress-bar [progress]=[dia.eficiencia]></progress-bar>
+    </div>
+
+    <ion-item>
+        Total:
+        <ion-badge color="secondary" item-end>${{total}}</ion-badge>
+    </ion-item>
+
+
+
 </ion-content>

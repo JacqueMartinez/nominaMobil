@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AutenticationProvider } from '../providers/autentication/autentication';
 import { EmpleadoProvider } from '../providers/empleado/empleado';
+import { BonosPage } from '../pages/bonos/bonos';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { EmpleadoProvider } from '../providers/empleado/empleado';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = LoginPage;
+  rootPage: any = BonosPage;
 
   pages: Array<{ title: string, component: any }>;
   iconos: Array<{ icono: string, concepto: string, importe: string }>;
@@ -32,7 +33,7 @@ export class MyApp {
       splashScreen.hide();
     });
 
-  
+
 
     this.pages = [{
       title: 'Home', component: HomePage
@@ -51,7 +52,7 @@ export class MyApp {
 
     // this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
 
-    this.autenticationProvider.getStatus().subscribe(datos => {
+    /* this.autenticationProvider.getStatus().subscribe(datos => {
       if(datos!=null){
         // this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
         //   this.empleado = informacion;
@@ -60,10 +61,10 @@ export class MyApp {
         this.obtenerDatos(datos.displayName);
       }
     });
-
+ */
   }
 
-  async obtenerDatos(displayName){
+/*   async obtenerDatos(displayName){
     await this.empleadoProvider.getEmpleado(displayName).valueChanges().subscribe((informacion)=>{
       this.empleado = informacion;
 
@@ -71,7 +72,7 @@ export class MyApp {
     })
     await console.log(this.empleado);
     
-  }
+  } */
   openPage(page) {
     this.nav.setRoot(page.component)
 

@@ -22,6 +22,7 @@ import { environment } from '../enviroment/enviroment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AutenticationProvider } from '../providers/autentication/autentication';
+import { BonosPage } from '../pages/bonos/bonos';
 import{ AngularFireStorageModule} from  'angularfire2/storage';
 
 export const firebaseConfig = environment.firebaseConfig;
@@ -37,6 +38,7 @@ AngularFireModule
     LoginPage,
     TiempoExtraPage,
     PerfilPage,
+    BonosPage,
     TabsPage,
     RecuperarPasswordPage,
     ProgressBarComponent
@@ -63,6 +65,7 @@ AngularFireModule
     LoginPage,
     TiempoExtraPage,
     EficienciaPage,
+    BonosPage,
     TabsPage,
     RecuperarPasswordPage,
     ProgressBarComponent
