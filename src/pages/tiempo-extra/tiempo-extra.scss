@@ -1,1 +1,59 @@
 
+.centrarHead {
+  align-content: center;
+  text-align: center;
+  font-size: 16px;
+  color: white;
+}
+.contenido {
+  font-size: 16px;
+  color: white;
+}
+.titulos {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 7px;
+}
+.header {
+  background-color: #203257;
+}
+.dias {
+  font-size: 16px;
+  color: black;
+  padding-left: 7px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.lista {
+  border-bottom: 1px solid grey;
+}
+.diasSemana {
+  font-weight: bold;
+  font-size: 15px;
+  color: #203257;
+  padding-left: 7px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.importeHoras {
+  text-align: right;
+}
+.cantidad {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #203257;
+}
+.totales{
+  margin-top: 20px;
+}
+.subtotales {
+  margin: 0px;
+  text-align: center;
+  color: white;
+  background-color: #0DE568;
+  border-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px
+}

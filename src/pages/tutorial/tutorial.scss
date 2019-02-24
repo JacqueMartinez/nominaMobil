@@ -1,0 +1,68 @@
+page-tutorial{
+  .toolbar-background {
+    background: #fff;
+    border-color: transparent;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: 2.8rem;
+  }
+
+  .slide-image {
+    max-height: 60%;
+    max-width: 70%;
+    margin: 18px 0;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #60646b;
+
+    b {
+      color: #203257;
+    }
+  }
+
+  /*     .arriba{
+        background-color: #203257;
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        bottom: 50%;
+        top: 50%;
+    }
+
+    .imagenes{
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .textoDes{
+        color: #f2f3f5;
+        padding: 10%;
+    }
+
+    .abajo{
+        background-color: #f2f3f5;
+        height: 50%;
+        width: 100%;
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        bottom: 0;
+        top: 0;
+    } */
+
+  }

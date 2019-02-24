@@ -8,8 +8,8 @@
 
     <ion-navbar color="title">
         <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+        <ion-icon name="menu"></ion-icon>
+      </button>
 
         <ion-title>Perfil</ion-title>
 
@@ -21,9 +21,8 @@
 
 <ion-content padding class="backgroundcolor">
 
-
     <div id="bloque">
-        <img src="../../assets/imgs/964.jpg" alt="Avatar" style="width:200px">
+        <img src="{{this.URLFoto}}" alt="Avatar" style="width:200px">
     </div>
 
 
@@ -31,7 +30,7 @@
     <div class="nombreEmpleado">
         <ion-row>
             <ion-col align-self-center>
-                <span class="labels">CASTILLA SORIANO GUILLERMINA </span>
+                <span class="labels">{{empleado.Nombre}} </span>
             </ion-col>
         </ion-row>
     </div>
@@ -42,37 +41,35 @@
                 <ion-col>
                     <div class="list">
                         <label class="item item-input">
-              <span class="input-label">Supervisora de Calidad</span>
-            </label>
+            <span class="input-label">{{empleado.Departamento}}</span>
+          </label>
                     </div>
                     <br>
-                    <!-- <span class="puesto">PUESTO</span> -->
                 </ion-col>
             </ion-row>
         </div>
     </ion-grid>
 
     <br>
-    <br>
-
 
     <ion-grid>
         <div class="centrado">
             <ion-row>
-                <!--  <ion-col>
-                    <div class="list">
-                        <label class="item item-input">
-              <span class="input-label">Calidad</span>
-            </label>
-                    </div>
-                    <br>
-                    <span class="labelsTitle">ÁREA</span>
-                </ion-col> -->
                 <ion-col>
                     <div class="list">
                         <label class="item item-input">
-              <span class="importe">$ 3,500.00</span>
-            </label>
+            <ng-container *ngIf="semana == 'actual'; else elseTemplate">
+                <span class="importe">
+                    $ 3,500.00
+                  </span>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <span class="importe">
+                    $ 2,800.00
+                </span>
+            </ng-template>
+
+          </label>
                     </div>
                     <br>
                     <span class="labelsTitle">IMPORTE</span>
@@ -88,8 +85,8 @@
                 <ion-col>
                     <div class="list">
                         <label class="item item-input">
-              <span class="input-label">$800.00</span>
-            </label>
+            <span class="input-label">$800.00</span>
+          </label>
                     </div>
                     <br>
                     <span class="labelsTitle">SUELDO BASE</span>
@@ -97,8 +94,8 @@
                 <ion-col>
                     <div class="list">
                         <label class="item item-input">
-              <span class="input-label">Línea 3</span>
-            </label>
+            <span class="input-label">Línea 3</span>
+          </label>
                     </div>
                     <br>
                     <span class="labelsTitle">DEPARTAMENTO</span>
@@ -109,8 +106,7 @@
 
 
     <br>
-    <ion-fab right bottom mini>
-        <button ion-fab color="title" (click)="showSem()"><ion-icon name="settings"></ion-icon></button>
+    <ion-fab right bottom>
+        <button ion-fab mini color="title" (click)="showSem()"><ion-icon name="settings"></ion-icon></button>
     </ion-fab>
-
 </ion-content>

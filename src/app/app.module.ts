@@ -11,10 +11,28 @@ import { EficienciaPage } from '../pages/eficiencia/eficiencia';
 import { LoginPage } from '../pages/login/login';
 import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
 import { PerfilPage } from '../pages/perfil/perfil';
-import {TabsPage} from "../pages/tabs/tabs";
+import { TabsPage } from "../pages/tabs/tabs";
 import { RecuperarPasswordPage } from '../pages/recuperar-password/recuperar-password';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
+import { IonicStorageModule } from '@ionic/storage';
+
+import { EmpleadoProvider } from '../providers/empleado/empleado';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../enviroment/enviroment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AutenticationProvider } from '../providers/autentication/autentication';
+import{ AngularFireStorageModule} from  'angularfire2/storage';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+import { AjustesProvider } from '../providers/ajustes/ajustes';
+import { TutorialPageModule } from '../pages/tutorial/tutorial.module';
+
+export const firebaseConfig = environment.firebaseConfig;
+
+
+AngularFireModule
 @NgModule({
   declarations: [
     MyApp,
@@ -30,10 +48,18 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
   ],
   imports: [
     BrowserModule,
+    TutorialPageModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp,
-      {scrollPadding: false,
-      scrollAssist: true,
-      autoFocusAssist: false}),
+      {
+        scrollPadding: false,
+        scrollAssist: true,
+        autoFocusAssist: false
+      }),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +77,12 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AjustesProvider,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    EmpleadoProvider,
+    AutenticationProvider,
+    AngularFireStorageModule,
+    AjustesProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,0 +1,78 @@
+
+<ion-content padding>
+
+    <ion-slides pager>
+  
+      <!-- Código para crear slides -->
+        <ion-slide *ngFor="let slide of slides">
+          <ion-toolbar>
+  
+            <ion-buttons end>
+              <button ion-button color="primary"
+                      (click)="saltar_tutorial()">Saltar</button>
+            </ion-buttons>
+  
+          </ion-toolbar>
+  
+          <img [src]="slide.image" class="slide-image"/>
+          <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+          <p [innerHTML]="slide.description"></p>
+        </ion-slide>
+        <!-- Fin del ngFor -->
+  
+        <!-- Ultimo Slide -->
+        <ion-slide>
+          <ion-toolbar>
+          </ion-toolbar>
+  
+          <img src="../../assets/imgs/logo1.png" class="slide-image"/>
+          <h2 class="slide-title">¿Listo para empezar?</h2>
+          <p>Si las dudas persisten acerca de tu pago, podras acudir al departamento de nominas para posibles aclaraciones, <br><b>Pero no sin antes revisar adecuadamente tus calculos</b></p>
+          <p><b>Vuelve las veces que necesites recordar algo :)</b></p>
+          <button ion-button large clear icon-right color="primary"
+                  (click)="saltar_tutorial()">
+            Continuar
+            <ion-icon name="arrow-forward"></ion-icon>
+          </button>
+  
+        </ion-slide>
+        <!-- Fin del último slide -->
+  
+      </ion-slides>
+  
+  </ion-content>
+
+<!--<ion-slides pager>
+
+   <ion-slide>
+    <div class="arriba">
+      <p class="textoDes">Atraves de esta aplicacion podras despejar dudas costos de tus horas dobles, triples y rebaces.</p>
+    </div>
+    <div class="abajo">
+      <h2>Bienvenido</h2>
+      <p>Te damos la mas cordial bien venida a HERA MOVIL</p>
+      <img class="imagenes" src="../../assets/imgs/sliderTutorial.png">
+    </div>
+  </ion-slide>
+      
+  <ion-slide style="">
+      <div class="arriba">
+          <p>hol</p>
+        </div>
+        <div class="abajo">
+          <h2>Bienvenido</h2>
+          <p>Esta aplicacion te ayudara a dicipar dudas</p>
+          <img class="imagenes" src="../../assets/imgs/sliderTutorial2.png">
+        </div>  
+      </ion-slide>
+      
+  <ion-slide style="">
+      <div class="arriba">
+          <p>hol</p>
+        </div>
+        <div class="abajo">
+          <h2>Bienvenido</h2>
+          <p>Esta aplicacion te ayudara a dicipar dudas</p>
+        </div>
+  </ion-slide>
+</ion-slides> -->
