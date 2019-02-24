@@ -1,24 +1,24 @@
 <ion-header>
-
     <ion-navbar color="title">
         <ion-title>Eficiencia</ion-title>
     </ion-navbar>
-
 </ion-header>
 
 <ion-content padding class="backgroundcolor">
-    <div *ngFor="let dia of diasSemana">
+   <div *ngFor="let dia of diasSemana" >
         <ion-item>
             {{dia.dia}}
-            <ion-badge color="secondary" item-end>$ {{dia.importe}}</ion-badge>
+                <ion-badge  color="secondary" item-end>{{dia.importe}}</ion-badge>
+            
         </ion-item>
-        <progress-bar [progress]=[dia.eficiencia]></progress-bar>
-    </div>
-
-    <div>
+            <progress-bar  [progress]=[dia.eficiencia]></progress-bar>
+    </div> 
+      
         <ion-item>
-            Total
+                Total: 
             <ion-badge color="secondary" item-end>${{total}}</ion-badge>
         </ion-item>
-    </div>
+
+
+   
 </ion-content>

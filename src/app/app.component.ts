@@ -8,8 +8,13 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AutenticationProvider } from '../providers/autentication/autentication';
 import { EmpleadoProvider } from '../providers/empleado/empleado';
+<<<<<<< HEAD
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { AjustesProvider } from '../providers/ajustes/ajustes';
+=======
+import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
+import { EficienciaPage } from '../pages/eficiencia/eficiencia';
+>>>>>>> 79159126b9db3ba6d8a851c4e7fb9699b7363e0d
 
 
 @Component({
@@ -17,8 +22,12 @@ import { AjustesProvider } from '../providers/ajustes/ajustes';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+<<<<<<< HEAD
   //rootPage: any =  LoginPage;
   rootPage: any;
+=======
+  rootPage: any = EficienciaPage;
+>>>>>>> 79159126b9db3ba6d8a851c4e7fb9699b7363e0d
 
   pages: Array<{ title: string, component: any }>;
   iconos: Array<{ icono: string, concepto: string, importe: string }>;
@@ -44,7 +53,7 @@ export class MyApp {
       })
     });
 
-  
+
 
     this.pages = [{
       title: 'Home', component: HomePage
@@ -61,11 +70,24 @@ export class MyApp {
       { icono: "leaf", concepto: 'Dia Festivo:', importe: '$ 1300.40' }
     ];
 
+<<<<<<< HEAD
     // this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
 
    /*     */
 
+=======
+    this.autenticationProvider.loginWithEmail('e0020@hera.com', 'ln69je');
+ 
+      this.autenticationProvider.getStatus().subscribe(datos => {
+      this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion) => {
+        this.empleado = informacion;
+        console.log(this.empleado);
+      })
+    });
+    console.log('displayname'+this.empleado.displayname) 
+>>>>>>> 79159126b9db3ba6d8a851c4e7fb9699b7363e0d
 
+ 
   }
   openPage(page) {
     this.nav.setRoot(page.component)

@@ -10,35 +10,26 @@
       <ion-col size="4" class="contenido">
         <p class="titulos">Dia</p>
       </ion-col>
-      <ion-col size="4" class="centrarHead">
-        <p class="titulos">Dobles</p>
-      </ion-col>
-      <ion-col size="4" class="centrarHead">
-        <p class="titulos">Triples</p>
+      <ion-col size="8" class="centrarHead">
+        <p class="titulos">Horas</p>
       </ion-col>
     </ion-row>
 
     <ion-row *ngFor="let dia of diasSemana" class="lista">
-        <ion-col size="4" class="contenido">
-          <p class="diasSemana">{{dia.dia}}</p>
-        </ion-col>
-        <ion-col size="4" class="centrarHead">
-          <p class="dias">{{dia.dobles}}</p>
-        </ion-col>
-        <ion-col size="4" class="centrarHead">
-          <p class="dias">{{dia.triples}}</p>
-        </ion-col>
+      <ion-col size="4" class="contenido">
+        <p class="diasSemana">{{dia.dia}}</p>
+      </ion-col>
+      <ion-col size="8" class="centrarHead">
+        <p class="dias">{{dia.horasExtra}}</p>
+      </ion-col>
       </ion-row>
 
       <ion-row>
         <ion-col size="4" class="contenido">
           <p class="diasSemana">Total</p>
         </ion-col>
-        <ion-col size="4" class="centrarHead">
-          <p class="dias">23</p>
-        </ion-col>
-        <ion-col size="4" class="centrarHead">
-          <p class="dias">27</p>
+        <ion-col size="8" class="centrarHead">
+          <p class="dias">{{horasTotales}}</p>
         </ion-col>
       </ion-row>
 
@@ -49,8 +40,8 @@
               <ion-icon name="alarm" style="font-size: 35px;"></ion-icon>
             </ion-col>
             <ion-col col-9>
-              <span class="diasSemana">Total dobles:</span>
-              <p class="subtotales">$ 950.00</p>
+              <span class="diasSemana"> &nbsp; &nbsp;Dobles: {{horasDobles}}</span>
+              <p class="subtotales">$ {{importeDobles | number: '1.2-2'}}</p>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -60,8 +51,8 @@
               <ion-icon name="alarm" style="font-size: 35px;"></ion-icon>
             </ion-col>
             <ion-col col-9>
-              <span class="diasSemana">Total Triples:</span>
-              <p class="subtotales">$ 950.00</p>
+              <span class="diasSemana">&nbsp; Triples: {{horasTriples}}</span>
+              <p class="subtotales">$ {{importeTriples | number: '1.2-2'}}</p>
             </ion-col>
           </ion-row>
         </ion-col>
@@ -72,7 +63,7 @@
 
         </ion-col>
         <ion-col size="6">
-          <p class="importeHoras cantidad">$ 1900.00</p>
+          <p class="importeHoras cantidad">$ {{importeTotal | number: '1.2-2'}}</p>
           <p style="margin: 0px; text-align: right">Importe total</p>
         </ion-col>
       </ion-row>
