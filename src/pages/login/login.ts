@@ -5,6 +5,7 @@ import { RecuperarPasswordPage } from '../recuperar-password/recuperar-password'
 import { PerfilPage } from '../perfil/perfil';
 import { AutenticationProvider } from '../../providers/autentication/autentication';
 import { User } from '../../app/interfaz/user';
+import { TutorialPage } from '../tutorial/tutorial';
 
 
 /**
@@ -96,6 +97,11 @@ export class LoginPage {
   iraRecuperar() {
     this.navCtrl.setRoot(RecuperarPasswordPage);
   }
+  
+  iraTutorial() {
+    this.navCtrl.setRoot(TutorialPage);
+  }
+
   ionViewDidEnter() {
     this.menuController.enable(false);
   }

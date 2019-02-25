@@ -15,6 +15,8 @@ import { TabsPage } from "../pages/tabs/tabs";
 import { RecuperarPasswordPage } from '../pages/recuperar-password/recuperar-password';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
+import { IonicStorageModule } from '@ionic/storage';
+
 import { EmpleadoProvider } from '../providers/empleado/empleado';
 
 import { AngularFireModule } from '@angular/fire';
@@ -24,6 +26,9 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AutenticationProvider } from '../providers/autentication/autentication';
 import { BonosPage } from '../pages/bonos/bonos';
 import{ AngularFireStorageModule} from  'angularfire2/storage';
+import { TutorialPage } from '../pages/tutorial/tutorial';
+import { AjustesProvider } from '../providers/ajustes/ajustes';
+import { TutorialPageModule } from '../pages/tutorial/tutorial.module';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -45,6 +50,8 @@ AngularFireModule
   ],
   imports: [
     BrowserModule,
+    TutorialPageModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp,
       {
         scrollPadding: false,
@@ -73,10 +80,12 @@ AngularFireModule
   providers: [
     StatusBar,
     SplashScreen,
+    AjustesProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     EmpleadoProvider,
     AutenticationProvider,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AjustesProvider
   ]
 })
 export class AppModule { }
