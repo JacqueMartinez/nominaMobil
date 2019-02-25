@@ -20,81 +20,59 @@ import { isType } from '@angular/core/src/type';
 })
 export class EficienciaPage {
 
-    
-    total :number;
-    idEmpleado: string;
-    empleado:  any= [];
+    totalBonos :number =0;
     bonoCompleto: number = 0;
-    Diferencia: number =0;
-  
-    diasSemana: any [] = [];
-    eficiencias = [];
+    diasSemana: any = [];
     
     constructor(public navCtrl: NavController, public navParams: NavParams,
       public autenticationProvider: AutenticationProvider, public empleadoProvider: EmpleadoProvider) {
+    
         this.autenticationProvider.getStatus().subscribe(datos => {
           this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion: any) => {
-            this.empleado = informacion;
-            this.getInformacion();
-            this.bonoCompleto=parseInt(this.empleado.BonoProduccionC);
-            this.obtenerEficiencia();
-            this.guardar();
-            this.diasSemana.forEach(element =>{
-        
-              this.total =this.total+ parseFloat(element.importe);
-              });
-              this.total.valueOf().toFixed(2)
-           console.log(this.total.valueOf().toFixed(2));
-           
-             
+            this.totalBonos = 0;
+            this.diasSemana = [
+              {dia: 'Lunes', eficiencia: informacion.Eficiencias.Efi_Lunes,importe:0},
+              {dia: 'Martes', eficiencia:  informacion.Eficiencias.Efi_Martes,importe:0},
+              {dia: 'Miercoles',  eficiencia:  informacion.Eficiencias.Efi_Miercoles,importe:0},
+              {dia: 'Jueves',  eficiencia:  informacion.Eficiencias.Efi_Jueves,importe:0},
+              {dia: 'Viernes', eficiencia: informacion.Eficiencias.Efi_Viernes,importe:0},
+             ]
+
+            this.bonoCompleto = (informacion.BonoProduccionC/5)
+  
+            this.calcularBonos();
           });
         });
     }
  
   ionViewDidLoad() {
     console.log('ionViewDidLoad EficienciaPage');
+  }
+
+
+  calcularBonos(){
+   this.diasSemana.forEach(dia => {
+    let importe = 0;
+    console.log(dia.dia+' '+dia.eficiencia);
     
-  }
-  getInformacion(){
-     this.diasSemana = [
-      {dia: 'Lunes', eficiencia: this.empleado.Efi_Lunes,importe:0},
-      {dia: 'Martes', eficiencia: this.empleado.Efi_Martes,importe:0},
-      {dia: 'Miercoles',  eficiencia: this.empleado.Efi_Miercoles,importe:0},
-      {dia: 'Jueves',  eficiencia: this.empleado.Efi_Jueves,importe:0},
-      {dia: 'Viernes', eficiencia: this.empleado.Efi_Viernes,importe:0},
-     ]
-  }
- 
-  obtenerEficiencia(){
-    this.diasSemana.forEach(dia => {
-      this.obtenerBono(dia.eficiencia);
-    });
-  }
-  obtenerBono(eficiencia){
-    
-    if (eficiencia>=84 && eficiencia<90) {
-      this.Diferencia = (.85)* (this.bonoCompleto/5);
-    } else if(eficiencia>=90 && eficiencia<95){
-      this.Diferencia = (.90) * (this.bonoCompleto/5);
+    if (dia.eficiencia>=84 && dia.eficiencia<90) {
+      importe = (.85)* (this.bonoCompleto);
+    } else if(dia.eficiencia>=90 && dia.eficiencia<95){
+      importe = (.90) * (this.bonoCompleto);
     }
-    else if(eficiencia>=95 && eficiencia<100){
-      this.Diferencia= (.95) * (this.bonoCompleto/5);
+    else if(dia.eficiencia>=95 && dia.eficiencia<100){
+      importe= (.95) * (this.bonoCompleto);
     }
-    else if(eficiencia>=100){
-      this.Diferencia = (1.00) * (this.bonoCompleto/5);
+    else if(dia.eficiencia>=100){
+      importe = (1.00) * (this.bonoCompleto);
     }
-    this.eficiencias.push(this.Diferencia.toFixed(2));
-
-  }
-  guardar(){
-    this.diasSemana.forEach(dia =>{
-      dia.importe = this.eficiencias.shift();
-    })
-  }
+    dia.importe = importe;
+    this.totalBonos= this.totalBonos +importe;
+   });
 
 
-
-
- 
       
-}
+  }
+ 
+  }
+

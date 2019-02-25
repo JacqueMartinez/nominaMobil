@@ -1,38 +1,116 @@
-<!--
-  Generated template for the BonosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
     <ion-navbar color="title">
         <button ion-button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-
-        <ion-title>Bonos</ion-title>
-
+        <ion-title>Bonos y Diferencias</ion-title>
     </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding class="backgroundcolor">
-    <ion-item *ngFor="let item of iconos">
+    <ion-item *ngIf="bonos.BonoProduccion>0">
         <ion-row>
-            <ion-col col-3 id="iconos">
-                <ion-icon name="{{item.icono}}"></ion-icon>
+            <ion-col col-3 id="iconos" style="color: brown">
+                <ion-icon name="flag"></ion-icon>
             </ion-col>
             <ion-col col-9>
                 <ion-row>
                     <ion-col id="texto">
-                        {{item.concepto}}
-                        <br><span class="importe">{{item.importe}}</span>
+                        Bono de Produccion:
+                        <br><span class="importe">{{bonos.BonoProduccion | currency }}</span>
                     </ion-col>
                 </ion-row>
             </ion-col>
         </ion-row>
     </ion-item>
-
+    <ion-item *ngIf="bonos.BonoRendimiento>0">
+        <ion-row>
+            <ion-col col-3 id="iconos" style="color: #FFE846">
+                <ion-icon name="flash"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+                <ion-row>
+                    <ion-col id="texto">
+                        Bono de Rendimiento:
+                        <br><span class="importe">{{bonos.BonoRendimiento | currency }}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item *ngIf="bonos.Descuentos>0">
+        <ion-row>
+            <ion-col col-3 id="iconos" style="color:#000000">
+                <ion-icon name="code-download"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+                <ion-row>
+                    <ion-col id="texto">
+                        Descuentos:
+                        <br><span class="importe">{{bonos.Descuentos | currency }}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item *ngIf="bonos.Dif>0">
+        <ion-row>
+            <ion-col col-3 id="iconos" style="color:#00B45C">
+                <ion-icon name="build"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+                <ion-row>
+                    <ion-col id="texto">
+                        Diferencias:
+                        <br><span class="importe">{{bonos.Dif | currency }}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item *ngIf="bonos.PrimaVacacional>0">
+        <ion-row>
+            <ion-col col-3 id="iconos" style="color:#2545AF">
+                <ion-icon name="map"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+                <ion-row>
+                    <ion-col id="texto">
+                        Prima Vacional:
+                        <br><span class="importe">{{bonos.PrimaVacacional | currency }}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item *ngIf="bonos.PrimaDominical>0">
+        <ion-row>
+            <ion-col col-3 id="iconos" style="color:#efb810">
+                <ion-icon name="medal"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+                <ion-row>
+                    <ion-col id="texto">
+                        Prima Dominical:
+                        <br><span class="importe">{{bonos.PrimaDominical | currency }}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+    <ion-item *ngIf="bonos.PagoDiaFestivo>0">
+        <ion-row>
+            <ion-col col-3 id="iconos" style="color:#A1D400">
+                <ion-icon name="leaf"></ion-icon>
+            </ion-col>
+            <ion-col col-9>
+                <ion-row>
+                    <ion-col id="texto">
+                        Pago de Dia Festivo:
+                        <br><span class="importe">{{bonos.PagoDiaFestivo | currency }}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-item>
 </ion-content>

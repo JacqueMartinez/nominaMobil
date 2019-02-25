@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {PerfilPage} from "../perfil/perfil";
 import {TiempoExtraPage} from "../tiempo-extra/tiempo-extra";
 import {EficienciaPage} from "../eficiencia/eficiencia";
+import { BonosPage } from '../bonos/bonos';
 
 /**
  * Generated class for the TabsPage page.
@@ -20,6 +21,7 @@ export class TabsPage {
   tabPerfil = PerfilPage;
   tabTiempoExtra = TiempoExtraPage;
   tabEficiencia = EficienciaPage;
+  tabBono = BonosPage
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

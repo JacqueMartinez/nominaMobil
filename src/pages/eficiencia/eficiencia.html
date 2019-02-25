@@ -8,7 +8,7 @@
     <div *ngFor="let dia of diasSemana">
         <ion-item>
             {{dia.dia}}
-            <ion-badge color="secondary" item-end>{{dia.importe}}</ion-badge>
+            <ion-badge color="secondary" item-end>{{dia.importe | currency}}</ion-badge>
 
         </ion-item>
         <progress-bar [progress]=[dia.eficiencia]></progress-bar>
@@ -16,9 +16,6 @@
 
     <ion-item>
         Total:
-        <ion-badge color="secondary" item-end>${{total}}</ion-badge>
+        <ion-badge color="secondary" item-end>{{totalBonos | currency}}</ion-badge>
     </ion-item>
-
-
-
 </ion-content>
