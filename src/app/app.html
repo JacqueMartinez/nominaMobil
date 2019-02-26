@@ -12,40 +12,18 @@
                                 Hera Movil
                             </ion-col>
                         </ion-row>
-                        <ion-row>
-                            <ion-col class="nombre">
-                                Brandon Vargas Bolaños Martinez
-                            </ion-col>
-                        </ion-row>
                     </ion-col>
                 </ion-row>
             </ion-grid>
         </ion-toolbar>
     </ion-header>
     <ion-content>
-        <ion-item *ngFor="let item of iconos">
-            <ion-row>
-                <ion-col col-3 id="iconos">
-                    <ion-icon name="{{item.icono}}"></ion-icon>
-                </ion-col>
-                <ion-col col-9>
-                    <ion-row>
-                        <ion-col id="texto">
-                            {{item.concepto}}
-                            <br><span class="importe">{{item.importe}}</span>
-                        </ion-col>
-                    </ion-row>
-                </ion-col>
-            </ion-row>
-        </ion-item>
-
-
+        <ion-list>
+            <button ion-button menuClose full end color="title" class="p-0" *ngFor="let page of pages" (click)="openPage(page)">{{page.title}}</button>
+        </ion-list>
     </ion-content>
     <ion-footer class="p-0 m-0">
         <button ion-button full end color="title" id="loguot" class="p-0" (click)="logOut()">Cerrar Sesión</button>
     </ion-footer>
 </ion-menu>
-
-
-
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
