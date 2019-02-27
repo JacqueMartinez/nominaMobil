@@ -13,6 +13,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { TiempoExtraPage } from '../pages/tiempo-extra/tiempo-extra';
 import { EficienciaPage } from '../pages/eficiencia/eficiencia';
 import { BonosPage } from '../pages/bonos/bonos';
+import { CalculosExtrasPage } from '../pages/calculos-extras/calculos-extras';
 
 
 @Component({
@@ -47,6 +48,7 @@ export class MyApp {
       {title: 'Tiempo Extra', component: TiempoExtraPage},
       {title: 'Eficiencia Semanal', component: EficienciaPage},
       {title: 'Bonos', component: BonosPage},
+      {title: 'Calculos Extras', component: CalculosExtrasPage},
 
     ];
 

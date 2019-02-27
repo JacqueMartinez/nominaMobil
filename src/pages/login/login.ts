@@ -70,7 +70,7 @@ export class LoginPage {
     this.autenticationProvider.loginWithEmail(this.usuario.email,this.usuario.password)
     .then(e=>{ 
       console.log('entro');
-      this.navCtrl.setRoot(TabsPage);})
+      this.navCtrl.setRoot(PerfilPage);})
     .catch(e =>{ 
       this.showAlert(e.message,'Error de Acceso')
       console.log(e)})

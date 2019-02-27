@@ -29,6 +29,7 @@ import{ AngularFireStorageModule} from  'angularfire2/storage';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { AjustesProvider } from '../providers/ajustes/ajustes';
 import { TutorialPageModule } from '../pages/tutorial/tutorial.module';
+import { CalculosExtrasPage } from '../pages/calculos-extras/calculos-extras';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -46,7 +47,8 @@ AngularFireModule
     BonosPage,
     TabsPage,
     RecuperarPasswordPage,
-    ProgressBarComponent
+    ProgressBarComponent,
+    CalculosExtrasPage
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ AngularFireModule
     BonosPage,
     TabsPage,
     RecuperarPasswordPage,
-    ProgressBarComponent
+    ProgressBarComponent,
+    CalculosExtrasPage
   ],
   providers: [
     StatusBar,

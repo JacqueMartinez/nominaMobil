@@ -17,9 +17,9 @@
             </ion-grid>
         </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content id="contenedor">
         <ion-list>
-            <button ion-button menuClose full end color="title" class="p-0" *ngFor="let page of pages" (click)="openPage(page)">{{page.title}}</button>
+            <button ion-item menuClose *ngFor="let page of pages" (click)="openPage(page)">{{page.title}}</button>
         </ion-list>
     </ion-content>
     <ion-footer class="p-0 m-0">
