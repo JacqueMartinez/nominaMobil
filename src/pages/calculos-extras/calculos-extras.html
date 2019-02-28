@@ -11,7 +11,7 @@
     <ion-icon name="menu"></ion-icon>
   </button>
 
-        <ion-title>Calculos Extras</ion-title>
+        <ion-title>Cálculos extras</ion-title>
 
     </ion-navbar>
 
@@ -19,5 +19,75 @@
 
 
 <ion-content padding>
+
+    <ion-list style="padding-right: 15px">
+
+        <p class="calculo">Horas dobles:</p>
+        <ion-item>
+          <ion-label floating>Número de horas</ion-label>
+          <ion-input type="number" (ionChange)="calculoHorasDobles()" [(ngModel)]="calculos.horasDobles.horas"></ion-input>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-8>
+                <p class="importes">Importe estimado:</p>
+            </ion-col>
+            <ion-col col-4 style="padding-right: 0%">
+                <p class="cantidad-calculo">$ {{ calculos.horasDobles.importe }}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <p class="calculo">Horas triples:</p>
+        <ion-item>
+          <ion-label floating>Número de horas</ion-label>
+          <ion-input type="number" (ionChange)="calculoHorasTriples()" [(ngModel)]="calculos.horasTriples.horas"></ion-input>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-8>
+              <p class="importes">Importe estimado:</p>
+            </ion-col>
+            <ion-col col-4 style="padding-right: 0%">
+                <p class="cantidad-calculo">$ {{calculos.horasTriples.importe}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <p class="calculo">Rebase:</p>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <ion-item class="ceroPadding">
+                <ion-label floating>Piezas</ion-label>
+                <ion-input type="number" (ionChange)="calculoRebase()" [(ngModel)]="calculos.rebases.piezas"></ion-input>
+              </ion-item>
+              <br>
+            </ion-col>
+            <ion-col col-6 style="padding-right: 0px !important;">
+              <ion-item class="ceroPadding">
+                <ion-label floating>Tarea</ion-label>
+                <ion-input type="number" (ionChange)="calculoRebase()" [(ngModel)]="calculos.rebases.tarea"></ion-input>
+              </ion-item>
+              <br>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col col-8>
+              <p class="importes-rebase">Importe estimado:</p>
+            </ion-col>
+            <ion-col col-4 style="padding-right: 0%">
+              <ng-container *ngIf="calculos.rebases.tarea == 0 || calculos.rebases.tarea == null ; else elseTemplate">
+                <p class="cantidad-calculo-rebase">$ 0.00</p>
+              </ng-container>
+              <ng-template #elseTemplate>
+                <p class="cantidad-calculo-rebase">$ {{ calculos.rebases.importe }}</p>
+              </ng-template>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
 
 </ion-content>

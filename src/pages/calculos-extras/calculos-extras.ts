@@ -17,12 +17,13 @@ import { EmpleadoProvider } from '../../providers/empleado/empleado';
 })
 export class CalculosExtrasPage {
 
+  titulo: string;
   sueldoBase: number = 0;
   importeHora: number = 0;
   calculos: any = {
-    horasDobles: { horas: 0, importe: 0 },
-    horasTriples: { horas: 0, importe: 0 },
-    rebases: { tarea: 0, piezas: 0, importe: 0 }
+    horasDobles: { horas: null, importe: 0 },
+    horasTriples: { horas: null, importe: 0 },
+    rebases: { tarea: null, piezas: 1, importe: 0 }
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,
     public autenticationProvider: AutenticationProvider, public empleadoProvider: EmpleadoProvider) {
@@ -32,14 +33,14 @@ export class CalculosExtrasPage {
         this.sueldoBase = informacion.SueldoBase;
         this.importeHora = (informacion.SueldoBase) / 67.2;
 
-     /*    this.calculoHorasDobles();
+        this.calculoHorasDobles();
         console.log(this.calculos.horasDobles.importe);
 
         this.calculoHorasTriples();
         console.log(this.calculos.horasTriples.importe);
 
+        console.log(this.calculos.rebases);
         this.calculoRebase();
-        console.log(this.calculos.rebases.importe); */
 
       });
     });
@@ -60,9 +61,10 @@ export class CalculosExtrasPage {
 
   calculoHorasDobles() {
     if (this.calculos.horasDobles.horas > 9) {
-      this.showAlert('Error','El numero de horas dobles no puede ser mayor a 9');
+      this.showAlert('Advertencia','El numero de horas dobles no puede ser mayor a 9');
     } else {
       this.calculos.horasDobles.importe = ((this.importeHora * 2) * this.calculos.horasDobles.horas).toFixed(2);
+      console.log(this.calculos.horasDobles.importe);
     }
   }
 
@@ -73,6 +75,5 @@ export class CalculosExtrasPage {
   calculoRebase() {
     this.calculos.rebases.importe = ((((this.sueldoBase / 5) / this.calculos.rebases.tarea) * this.calculos.rebases.piezas) * 2).toFixed(2);
   }
-
 
 }

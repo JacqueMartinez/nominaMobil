@@ -55,10 +55,10 @@ export class TiempoExtraPage {
     this.diasSemana = [
       {dia: 'Lunes', horasExtra: this.tiempoExtra.HorasLun},
       {dia: 'Martes', horasExtra: this.tiempoExtra.HorasMar},
-      {dia: 'Miercoles', horasExtra: this.tiempoExtra.HorasMie},
+      {dia: 'Miércoles', horasExtra: this.tiempoExtra.HorasMie},
       {dia: 'Jueves', horasExtra: this.tiempoExtra.HorasJue},
       {dia: 'Viernes', horasExtra: this.tiempoExtra.HorasVie},
-      {dia: 'Sabado', horasExtra: this.tiempoExtra.HorasSab},
+      {dia: 'Sábado', horasExtra: this.tiempoExtra.HorasSab},
       {dia: 'Domingo', horasExtra: this.tiempoExtra.HorasDom}
     ]
   }
