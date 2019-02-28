@@ -62,6 +62,8 @@ export class CalculosExtrasPage {
   calculoHorasDobles() {
     if (this.calculos.horasDobles.horas > 9) {
       this.showAlert('Advertencia','El numero de horas dobles no puede ser mayor a 9');
+      this.calculos.horasDobles.importe = 0;
+      this.calculos.horasDobles.horas = null;
     } else {
       this.calculos.horasDobles.importe = ((this.importeHora * 2) * this.calculos.horasDobles.horas).toFixed(2);
       console.log(this.calculos.horasDobles.importe);

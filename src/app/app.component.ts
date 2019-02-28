@@ -31,11 +31,11 @@ export class MyApp {
     platform.ready().then(() => {
       //aqui cargamos el storage
       _ajustes.cargar_storage().then(() => {
-        /* if (_ajustes.ajustes.mostrar_tutorial) {
+        if (_ajustes.ajustes.mostrar_tutorial) {
           this.rootPage = TutorialPage;
         } else {
           this.rootPage = LoginPage;
-        } */
+        }
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.
         statusBar.styleDefault();
