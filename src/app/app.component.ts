@@ -21,8 +21,8 @@ import { CalculosExtrasPage } from '../pages/calculos-extras/calculos-extras';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any =  CalculosExtrasPage;
-  //rootPage: any;
+  //rootPage: any =  CalculosExtrasPage;
+  rootPage: any;
 
   pages: Array<{ title: string, component: any }>;
 
