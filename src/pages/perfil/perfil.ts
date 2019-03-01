@@ -32,10 +32,27 @@ export class PerfilPage {
   }
 
   async iniciarEmpleado() {
-    await this.autenticationProvider.getStatus().subscribe(datos => { this.idEmpleado = datos.displayName });
+    await this.autenticationProvider.getStatus().subscribe(datos => {  this.extraerNumero(datos.email) });
     await this.empleadoProvider.getEmpleado(parseInt(this.idEmpleado)).valueChanges().subscribe((datos) => {this.empleado = datos});
     await this.empleadoProvider.getURL(this.idEmpleado+ '.jpg').subscribe(datos=>{this.URLFoto = datos});
 
+  }
+
+  public extraerNumero(numero:string){
+    numero.charAt(1);
+    numero.length;
+    let valor: string = '';
+    for (let index = 0; index < numero.length; index++) {
+      const element = numero[index];
+      if (parseInt(element)>-1) {
+        valor = valor + element;
+      }
+    }
+
+    valor = valor.replace(/^0+/, ''); 
+
+   this.idEmpleado = parseInt(valor).toString();
+    
   }
 
   ionViewDidLoad() {
