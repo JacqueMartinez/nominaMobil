@@ -2,7 +2,7 @@ progress-bar {
 
     .progress-outer {
         width: 100%;
-  
+
         margin: 10px 2%;
         text-align: center;
         background-color: #f4f4f4;
@@ -13,6 +13,7 @@ progress-bar {
 
     .progress-inner {
         min-width: 10%;
+        max-width: 100%;
         border-radius: 10px;
         background-color:#203257;
     }

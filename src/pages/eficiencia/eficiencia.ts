@@ -23,12 +23,14 @@ export class EficienciaPage {
     totalBonos :number =0;
     bonoCompleto: number = 0;
     diasSemana: any = [];
-    
+    idEmpleado: string;
+
     constructor(public navCtrl: NavController, public navParams: NavParams,
       public autenticationProvider: AutenticationProvider, public empleadoProvider: EmpleadoProvider) {
-    
+
         this.autenticationProvider.getStatus().subscribe(datos => {
-          this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion: any) => {
+          this.extraerNumero(datos.email);
+          this.empleadoProvider.getEmpleado(this.idEmpleado).valueChanges().subscribe((informacion: any) => {
             this.totalBonos = 0;
             this.diasSemana = [
               {dia: 'Lunes', eficiencia: informacion.Eficiencias.Efi_Lunes,importe:0},
@@ -39,12 +41,24 @@ export class EficienciaPage {
              ]
 
             this.bonoCompleto = (informacion.BonoProduccionC/5)
-  
+
             this.calcularBonos();
           });
         });
     }
- 
+
+    public extraerNumero(numero:string){
+      let valor: string = '';
+      for (let index = 0; index < numero.length; index++) {
+        const element = numero[index];
+        if (parseInt(element)>-1) {
+          valor = valor + element;
+        }
+      }
+      valor = valor.replace(/^0+/, '');
+      this.idEmpleado = parseInt(valor).toString();
+    }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad EficienciaPage');
   }
@@ -54,7 +68,7 @@ export class EficienciaPage {
    this.diasSemana.forEach(dia => {
     let importe = 0;
     console.log(dia.dia+' '+dia.eficiencia);
-    
+
     if (dia.eficiencia>=84 && dia.eficiencia<90) {
       importe = (.85)* (this.bonoCompleto);
     } else if(dia.eficiencia>=90 && dia.eficiencia<95){
@@ -71,8 +85,8 @@ export class EficienciaPage {
    });
 
 
-      
+
   }
- 
+
   }
 

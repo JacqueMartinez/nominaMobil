@@ -34,7 +34,7 @@ export class PerfilPage {
   async iniciarEmpleado() {
     await this.autenticationProvider.getStatus().subscribe(datos => {  this.extraerNumero(datos.email) });
     await this.empleadoProvider.getEmpleado(parseInt(this.idEmpleado)).valueChanges().subscribe((datos) => {this.empleado = datos});
-    await this.empleadoProvider.getURL(this.idEmpleado+ '.jpg').subscribe(datos=>{this.URLFoto = datos});
+    await this.empleadoProvider.getURL(this.idEmpleado+ '.JPG').subscribe(datos=>{this.URLFoto = datos});
 
   }
 
@@ -48,11 +48,8 @@ export class PerfilPage {
         valor = valor + element;
       }
     }
-
-    valor = valor.replace(/^0+/, ''); 
-
-   this.idEmpleado = parseInt(valor).toString();
-    
+    valor = valor.replace(/^0+/, '');
+    this.idEmpleado = parseInt(valor).toString();
   }
 
   ionViewDidLoad() {

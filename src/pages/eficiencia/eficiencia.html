@@ -7,15 +7,21 @@
 <ion-content padding class="backgroundcolor">
     <div *ngFor="let dia of diasSemana">
         <ion-item>
-            {{dia.dia}}
+            <span style="font-weight: 400;">{{dia.dia}}</span>
             <ion-badge color="secondary" item-end>{{dia.importe | currency}}</ion-badge>
 
         </ion-item>
         <progress-bar [progress]=[dia.eficiencia]></progress-bar>
     </div>
 
-    <ion-item>
-        Total:
-        <ion-badge color="secondary" item-end>{{totalBonos | currency}}</ion-badge>
-    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+        </ion-col>
+        <ion-col size="6">
+          <p class="importeHoras cantidad"> {{totalBonos | currency}}</p>
+          <p style="margin: 0px; text-align: right">Importe total</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>

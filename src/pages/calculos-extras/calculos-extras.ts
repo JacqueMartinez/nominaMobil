@@ -20,6 +20,7 @@ export class CalculosExtrasPage {
   titulo: string;
   sueldoBase: number = 0;
   importeHora: number = 0;
+  idEmpleado: string;
   calculos: any = {
     horasDobles: { horas: null, importe: 0 },
     horasTriples: { horas: null, importe: 0 },
@@ -29,11 +30,12 @@ export class CalculosExtrasPage {
     public autenticationProvider: AutenticationProvider, public empleadoProvider: EmpleadoProvider) {
 
     this.autenticationProvider.getStatus().subscribe(datos => {
-      this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion: any) => {
+      this.extraerNumero(datos.email);
+      this.empleadoProvider.getEmpleado(this.idEmpleado).valueChanges().subscribe((informacion: any) => {
         this.sueldoBase = informacion.SueldoBase;
         this.importeHora = (informacion.SueldoBase) / 67.2;
 
-        this.calculoHorasDobles();
+     /*    this.calculoHorasDobles();
         console.log(this.calculos.horasDobles.importe);
 
         this.calculoHorasTriples();
@@ -41,9 +43,21 @@ export class CalculosExtrasPage {
 
         console.log(this.calculos.rebases);
         this.calculoRebase();
-
+ */
       });
     });
+  }
+
+  public extraerNumero(numero:string){
+    let valor: string = '';
+    for (let index = 0; index < numero.length; index++) {
+      const element = numero[index];
+      if (parseInt(element)>-1) {
+        valor = valor + element;
+      }
+    }
+    valor = valor.replace(/^0+/, '');
+    this.idEmpleado = parseInt(valor).toString();
   }
 
   ionViewDidLoad() {

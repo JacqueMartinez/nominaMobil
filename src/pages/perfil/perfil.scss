@@ -41,7 +41,7 @@ page-perfil {
     }
     .nombreEmpleado {
         text-align: center;
-        padding-top: 15px;
+        padding-top: 5px;
     }
     #bloque {
         margin-left: auto;
@@ -49,6 +49,32 @@ page-perfil {
         height: 170px;
         width: 170px;
         padding-bottom: 10px;
+    }
+    .avatarFrameOffLine {
+      padding: 3%;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      /*
+      -webkit-box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.75);
+      -moz-box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.75);
+      box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.75);*/
+      -webkit-box-shadow: 0px 1px 11px -1px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 1px 11px -1px rgba(0,0,0,0.75);
+      box-shadow: 0px 1px 11px -1px rgba(0,0,0,0.75);
+    }
+
+
+
+    .flex-container {
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      //border: 1px solid red;
+    }
+    .flex-container > div > img{
+      width: 150px !important;
+      height: 150px !important;
+      text-align: center;
     }
     .input-label3 {
         text-align: center;

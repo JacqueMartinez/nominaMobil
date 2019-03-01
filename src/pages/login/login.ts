@@ -39,7 +39,7 @@ export class LoginPage {
     public alertCtrl: AlertController) {
 
       console.log(this.passwordType);
-      
+
       //   this.usuario.forEach(element => {
       //    this.autenticationProvider.registrarWithEmailPassword(element.user, element.password).then((datos) => {
       //      datos.user.updateProfile({ displayName: element.displayname, photoURL: element.displayname+'.jpg' }).then(() => {
@@ -68,10 +68,10 @@ export class LoginPage {
   public iniciarSesion() {
     console.log('inicio');
     this.autenticationProvider.loginWithEmail(this.usuario.email,this.usuario.password)
-    .then(e=>{ 
+    .then(e=>{
       console.log('entro');
       this.navCtrl.setRoot(PerfilPage);})
-    .catch(e =>{ 
+    .catch(e =>{
       this.showAlert(e.message,'Error de Acceso')
       console.log(e)})
   }
@@ -97,7 +97,7 @@ export class LoginPage {
   iraRecuperar() {
     this.navCtrl.setRoot(RecuperarPasswordPage);
   }
-  
+
   iraTutorial() {
     this.navCtrl.setRoot(TutorialPage);
   }

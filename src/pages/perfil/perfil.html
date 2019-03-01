@@ -5,102 +5,92 @@
   Ionic pages and navigation.
 -->
 <ion-header>
+  <ion-navbar color="title">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
 
-    <ion-navbar color="title">
-        <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-
-        <ion-title>Perfil</ion-title>
-
-    </ion-navbar>
-
-
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
 </ion-header>
 
-
 <ion-content padding class="backgroundcolor">
-
-    <div id="bloque">
-        <img src="{{this.URLFoto}}" alt="Avatar" style="width:200px">
+  <div class="flex-container">
+    <div>
+        <div>
+            <img src="{{ this.URLFoto }}" alt="Avatar" class="avatarImg avatarFrameOffLine" style="width: 200px; height: 200px"/>
+        </div>
+      </div>
     </div>
-
-
-    <br>
-    <div class="nombreEmpleado" style="padding-top: 25px">
+  <br />
+  <ion-grid>
+      <div class="centrado">
         <ion-row>
-            <ion-col align-self-center>
-                <span class="labels">{{empleado.Nombre}} </span>
-            </ion-col>
+          <ion-col>
+            <div class="list">
+              <label class="item item-input">
+                <span class="input-label" style="font-size: 20px">No. {{ empleado.ID }}</span>
+              </label>
+            </div>
+            <br />
+          </ion-col>
         </ion-row>
+      </div>
+    </ion-grid>
+
+  <div class="nombreEmpleado">
+    <ion-row>
+      <ion-col align-self-center>
+        <span class="labels" style="font-size: 18px">{{ empleado.Nombre }} </span>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <br />
+
+  <ion-grid>
+    <div class="centrado">
+      <ion-row>
+        <ion-col>
+          <div class="list">
+            <label class="item item-input">
+              <span class="importe">
+                {{ empleado.Importe | currency }}
+              </span>
+            </label>
+          </div>
+          <br />
+          <span class="labelsTitle">IMPORTE</span>
+        </ion-col>
+      </ion-row>
     </div>
+  </ion-grid>
 
-    <ion-grid>
-        <div class="centrado">
-            <ion-row>
-                <ion-col>
-                    <div class="list">
-                        <label class="item item-input">
-            <span class="input-label">{{empleado.Departamento}}</span>
-          </label>
-                    </div>
-                    <br>
-                </ion-col>
-            </ion-row>
-        </div>
-    </ion-grid>
-
-    <br>
-
-    <ion-grid>
-        <div class="centrado">
-            <ion-row>
-                <ion-col>
-                    <div class="list">
-                        <label class="item item-input">
-            <ng-container *ngIf="semana == 'actual'; else elseTemplate">
-                <span class="importe">
-                    $ 3,500.00
-                  </span>
-            </ng-container>
-            <ng-template #elseTemplate>
-                <span class="importe">
-                    $ 2,800.00
-                </span>
-            </ng-template>
-
-          </label>
-                    </div>
-                    <br>
-                    <span class="labelsTitle">IMPORTE</span>
-                </ion-col>
-            </ion-row>
-        </div>
-    </ion-grid>
-
-    <br>
-    <ion-grid>
-        <div class="centrado">
-            <ion-row>
-                <ion-col>
-                    <div class="list">
-                        <label class="item item-input">
-            <span class="input-label">$800.00</span>
-          </label>
-                    </div>
-                    <br>
-                    <span class="labelsTitle">SUELDO BASE</span>
-                </ion-col>
-                <ion-col>
-                    <div class="list">
-                        <label class="item item-input">
-            <span class="input-label">Línea 3</span>
-          </label>
-                    </div>
-                    <br>
-                    <span class="labelsTitle">DEPARTAMENTO</span>
-                </ion-col>
-            </ion-row>
-        </div>
-    </ion-grid>
+  <br />
+  <ion-grid>
+    <div class="centrado">
+      <ion-row>
+        <ion-col>
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">{{
+                empleado.SueldoBase | currency
+              }}</span>
+            </label>
+          </div>
+          <br />
+          <span class="labelsTitle">SUELDO BASE</span>
+        </ion-col>
+        <ion-col>
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">{{ empleado.Departamento }}</span>
+            </label>
+          </div>
+          <br />
+          <span class="labelsTitle">DEPARTAMENTO</span>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>

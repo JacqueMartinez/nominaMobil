@@ -27,6 +27,7 @@ export class TiempoExtraPage {
   importeDobles: number;
   importeTriples: number;
   importeTotal: number;
+  idEmpleado: string;
 
   diasSemana: any [] = [];
 
@@ -34,7 +35,8 @@ export class TiempoExtraPage {
     public autenticationProvider: AutenticationProvider, public empleadoProvider: EmpleadoProvider) {
 
       this.autenticationProvider.getStatus().subscribe(datos => {
-        this.empleadoProvider.getEmpleado(datos.displayName).valueChanges().subscribe((informacion: any) => {
+        this.extraerNumero(datos.email);
+        this.empleadoProvider.getEmpleado(this.idEmpleado).valueChanges().subscribe((informacion: any) => {
           this.tiempoExtra = informacion.TiempoExtra;
           this.sueldoBase = informacion.SueldoBase;
 
@@ -45,6 +47,21 @@ export class TiempoExtraPage {
           this.importeTotal = (this.importeDobles + this.importeTriples);
         });
       });
+  }
+
+
+  public extraerNumero(numero:string){
+    numero.charAt(1);
+    numero.length;
+    let valor: string = '';
+    for (let index = 0; index < numero.length; index++) {
+      const element = numero[index];
+      if (parseInt(element)>-1) {
+        valor = valor + element;
+      }
+    }
+    valor = valor.replace(/^0+/, '');
+    this.idEmpleado = parseInt(valor).toString();
   }
 
   ionViewDidLoad() {
