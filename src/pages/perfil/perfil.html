@@ -22,11 +22,10 @@
         </div>
       </div>
     </div>
-  <br />
   <ion-grid>
       <div class="centrado">
         <ion-row>
-          <ion-col>
+          <ion-col style="padding-bottom: 0%">
             <div class="list">
               <label class="item item-input">
                 <span class="input-label" style="font-size: 20px">No. {{ empleado.ID }}</span>
@@ -45,9 +44,7 @@
       </ion-col>
     </ion-row>
   </div>
-
-  <br />
-
+<br>
   <ion-grid>
     <div class="centrado">
       <ion-row>
@@ -59,7 +56,6 @@
               </span>
             </label>
           </div>
-          <br />
           <span class="labelsTitle">IMPORTE</span>
         </ion-col>
       </ion-row>
@@ -78,7 +74,6 @@
               }}</span>
             </label>
           </div>
-          <br />
           <span class="labelsTitle">SUELDO BASE</span>
         </ion-col>
         <ion-col>
@@ -87,8 +82,32 @@
               <span class="input-label">{{ empleado.Departamento }}</span>
             </label>
           </div>
-          <br />
           <span class="labelsTitle">DEPARTAMENTO</span>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+  <ion-grid>
+    <div class="centrado">
+      <ion-row>
+        <ion-col>
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">{{
+                empleado.Bono_Puntualidad | currency
+              }}</span>
+            </label>
+          </div>
+          <span class="labelsTitle">PUNTUALIDAD</span>
+        </ion-col>
+        <ion-col>
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">{{ empleado.Nivel }}</span>
+            </label>
+          </div>
+          <span class="labelsTitle">NIVEL</span>
         </ion-col>
       </ion-row>
     </div>

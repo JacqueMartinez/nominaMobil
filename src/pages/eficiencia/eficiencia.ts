@@ -35,7 +35,7 @@ export class EficienciaPage {
             this.diasSemana = [
               {dia: 'Lunes', eficiencia: informacion.Eficiencias.Efi_Lunes,importe:0},
               {dia: 'Martes', eficiencia:  informacion.Eficiencias.Efi_Martes,importe:0},
-              {dia: 'Miercoles',  eficiencia:  informacion.Eficiencias.Efi_Miercoles,importe:0},
+              {dia: 'Miércoles',  eficiencia:  informacion.Eficiencias.Efi_Miercoles,importe:0},
               {dia: 'Jueves',  eficiencia:  informacion.Eficiencias.Efi_Jueves,importe:0},
               {dia: 'Viernes', eficiencia: informacion.Eficiencias.Efi_Viernes,importe:0},
              ]
