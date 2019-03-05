@@ -41,7 +41,7 @@ page-perfil {
     }
     .nombreEmpleado {
         text-align: center;
-        padding-top: 5px;
+        padding-top: 10px;
     }
     #bloque {
         margin-left: auto;
@@ -68,7 +68,10 @@ page-perfil {
     .flex-container {
       padding-top: 20px;
       display: flex;
+      padding-right: 30px;
+      width: 100%;
       justify-content: center;
+      position: absolute;
       //border: 1px solid red;
     }
     .flex-container > div > img{
@@ -106,5 +109,20 @@ page-perfil {
         text-align: center;
         font-weight: 1000;
         font-size: 25px;
+    }
+
+    .animationEntrada {
+      animation-name: photoPerfil;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
+    }
+
+    @keyframes photoPerfil {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
 }

@@ -15,17 +15,20 @@
 </ion-header>
 
 <ion-content padding class="backgroundcolor">
-  <div class="flex-container">
-    <div>
+  <div>
+    <div class="flex-container animationEntrada">
+      <div>
         <div>
-            <img src="{{ this.URLFoto }}" alt="Avatar" class="avatarImg avatarFrameOffLine" style="width: 200px; height: 200px"/>
+          <img src="{{ this.URLFoto }}" alt="Avatar" class="avatarImg avatarFrameOffLine"
+            style="width: 200px; height: 200px" *ngIf="URLFoto" />
         </div>
       </div>
     </div>
+  </div>
   <ion-grid>
       <div class="centrado">
         <ion-row>
-          <ion-col style="padding-bottom: 0%">
+          <ion-col style="padding-top: 240px">
             <div class="list">
               <label class="item item-input">
                 <span class="input-label" style="font-size: 20px">No. {{ empleado.ID }}</span>
