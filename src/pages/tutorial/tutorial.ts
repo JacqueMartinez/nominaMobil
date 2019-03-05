@@ -24,28 +24,33 @@ export class TutorialPage {
     },
     {
       title: "USO:",
-      description: "En la pantalla numero <b>(1)</b> te encontraras el login que requerira tu <b>usuario</b> y <b>contraseña</b><br> Una vez que inicie sesion se encontrara con su perfil <b>(2)</b> donde podra ver los siguientes datos:<br><ul><li>Su nombre</li> <li>Su salario</li> <li>La Linea</li></ul>",
-      image: "../../assets/imgs/sliderTutorial3.png",
+      description: "En la pantalla numero <b>(1)</b> te encontraras el login que requerira tu <b>usuario</b> y <b>contraseña</b>",
+      image: "../../assets/imgs/slider1.png",
     },
     {
       title: "USO",
-      description: "En esta misma pantalla <b>(3)</b> se encoontrara con la barra navegadora donde podra navegar entre estas paguinas y tendra acceso a la siguiente informacion : <br> <ul><li>Su perfil</li> <li>El tiempo extra</li> <li>La eficiencia</li></ul>.",
-      image: "../../assets/imgs/sliderTutorial4.png",
+      description: "Una vez que usted inicie sesion encontrara con su perfil : <b>Su foto</b>, <b>Su nombre</b>, <b>Su sueldo base</b>, <b>Su departamento</b>, <b>Su nivel</b>, <b>Su Puntualidad</b>. <br>En el apartado <b>perfil</b> En el encontrara <ul><li>Perfil</li> <li>Tiempo extra</li> <li>Eficiencia semanal</li> <li>Bonos</li> <li>Calculos extra</li></ul>. ",
+      image: "../../assets/imgs/slider2.png",
     },
     {
       title: "USO",
-      description: "Al navegar a la paguina <b>Horas Extra</b> encontrara el total de horas dobles y horas triples de la semana asi como la cantidad y el importe total de las mismas.",
-      image: "../../assets/imgs/sliderTutorial5.png",
+      description: "Al navegar a la paguina <b>Tiempo Extra</b> encontrara el total de horas dobles y horas triples de la semana asi como la cantidad y el importe total de las mismas.",
+      image: "../../assets/imgs/slider3.png",
     },
     {
       title: "USO",
-      description: "Al navegar a la paguina <b>Eficiencia</b> encontrara el porcentaje de eficiencia productiva de cada semana y el importe en el recuadro color verde",
-      image: "../../assets/imgs/sliderTutorial6.png",
+      description: "Al navegar a la paguina <b>Eficiencia semanal</b> encontrara el porcentaje de eficiencia productiva de cada semana y el importe en el recuadro color verde",
+      image: "../../assets/imgs/slider4.png",
     },
     {
       title: "USO",
-      description: "Ahora regresaremos a la paguina <b>perfil</b>, nos dirijiremos a <b>perfil</b> donde encontrara: <br> <ul><li><b>Bono de produccion</b></li> <li><b>Bono de rendimiento</b></li> <li><b>Descuentos</b></li> <li><b>Diferencia</b></li> <li><b>Prima vacacional</b></li> <li><b>Prima Dominical</b></li> <li><b>Dia festivo</b></li> </ul>.",
-      image: "../../assets/imgs/sliderTutorial7.png",
+      description: "Al navegar a la paguina <b>Bonos</b>, donde encontrara: <br> <ul><li><b>Bono de produccion</b></li> <li><b>Bono de rendimiento</b></li> <li><b>Descuentos</b></li> <li><b>Diferencia</b></li> <li><b>Prima vacacional</b></li> <li><b>Prima Dominical</b></li> <li><b>Pago dia festivo</b></li> </ul>.",
+      image: "../../assets/imgs/slider5.png",
+    },
+    {
+      title: "USO",
+      description: "Al navegar a la paguina <b>Calculos extra</b> donde podra calular las horas dobles , triples y los rebases ingresando la informacion que se solicita.",
+      image: "../../assets/imgs/slider6.png",
     }
   ];
 
