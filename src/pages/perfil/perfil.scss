@@ -113,7 +113,8 @@ page-perfil {
 
     .animationEntrada {
       animation-name: photoPerfil;
-      animation-duration: 1s;
+      animation-duration: 1.5s;
+      animation-timing-function: ease;
     }
 
     @keyframes photoPerfil {
