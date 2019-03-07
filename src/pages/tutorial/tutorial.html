@@ -5,16 +5,21 @@
         <!-- Código para crear slides -->
         <ion-slide *ngFor="let slide of slides">
             <ion-toolbar>
-
                 <ion-buttons end>
                     <button ion-button color="primary" (click)="saltar_tutorial()">Saltar</button>
                 </ion-buttons>
-
             </ion-toolbar>
-
             <img [src]="slide.image" class="slide-image" />
             <h2 class="slide-title" [innerHTML]="slide.title"></h2>
             <p [innerHTML]="slide.description"></p>
+            <p [innerHTML]="slide.vinetas"></p>
+            <!-- <div style="text-align: left">
+                <ul>
+                    <li type="circle">Esto es un tipo de punto.
+                        <li type="square">Este es otro.
+                            <li type="disc">Y este es otro diferente.
+                </ul>
+            </div> -->
         </ion-slide>
         <!-- Fin del ngFor -->
 

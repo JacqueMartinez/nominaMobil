@@ -13,8 +13,8 @@ export class TutorialPage {
 
   slides: any[] = [
     {
-      title: "Welcome!",
-      description: "Te damos la más cordial bienvenida a: <b>HERA MOVIL</b><br>Una aplicación elaborada por <a>Ghost Enterprise</a>",
+      title: "Bienvenido!",
+      description: "Te damos la más cordial bienvenida a: <br><b>HERA MOVIL</b><br><br>En este tutorial encontraras una explicacion general del uso de la aplicacion que a continuacion es puesta a tu disposicion con el objetivo de que puedas consultar tu importe nomina cada semana.<br><br>Una aplicación elaborada por <a>Ghost Enterprise</a>",
       image: "../../assets/imgs/sliderTutorial.png",
     },
     {
@@ -29,7 +29,7 @@ export class TutorialPage {
     },
     {
       title: "Perfil y Menú lateral",
-      description: "Una vez que usted inicie sesión podrá visualizar su información como: <b>Foto</b>, <b>Nombre</b>, <b>Sueldo base</b>, <b>Departamento</b>, <b>Nivel</b>, <b>Bono de Puntualidad.</b> <br>En el <b>Menú Lateral</b> encontrará las distintas páginas a las que podrá dirigirse: <ul><li>Perfil</li> <li>Tiempo extra</li> <li>Eficiencia Semanal</li> <li>Bonos</li> <li>Cálculos Extras</li></ul>.",
+      description: "Una vez que usted inicie sesión podrá visualizar su información como: <b>Foto</b>, <b>Nombre</b>, <b>Sueldo base</b>, <b>Departamento</b>, <b>Nivel</b>, <b>Bono de Puntualidad.</b> <br>En el <b>Menú Lateral</b> encontrará las distintas páginas a las que podrá dirigirse: <ul style='text-align: left;'><li>Perfil</li> <li>Tiempo extra</li> <li>Eficiencia Semanal</li> <li>Bonos</li> <li>Cálculos Extras</li></ul>.",
       image: "../../assets/imgs/slider2.png",
     },
     {
@@ -44,7 +44,7 @@ export class TutorialPage {
     },
     {
       title: "Bonos",
-      description: "Al situarse en la página de <b>Bonos</b>, podrá observar los dintintos bonos obtenidos como: <br> <ul><li><b>Bono de producción</b></li> <li><b>Bono de rendimiento</b></li> <li><b>Descuentos</b></li> <li><b>Diferencia</b></li> <li><b>Prima vacacional</b></li> <li><b>Prima Dominical</b></li> <li><b>Pago dia festivo</b></li> </ul>.",
+      description: "Al situarse en la página de <b>Bonos</b>, podrá observar los dintintos bonos obtenidos como:  <ul><li>Bono de producción.<li>Bono de rendimiento.<li>Descuentos.<li>Diferencia.<li>Prima vacacional.<li>Prima Dominical.<li>Pago dia festivo</ul>.",
       image: "../../assets/imgs/slider5.png",
     },
     {
