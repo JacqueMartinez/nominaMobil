@@ -14,17 +14,17 @@ export class TutorialPage {
   slides: any[] = [
     {
       title: "Bienvenido!",
-      description: "Te damos la más cordial bienvenida a: <br><b>HERA MOVIL</b><br><br>En este tutorial encontraras una explicacion general del uso de la aplicacion que a continuacion es puesta a tu disposicion con el objetivo de que puedas consultar tu importe nomina cada semana.<br><br>Una aplicación elaborada por <a>Ghost Enterprise</a>",
+      description: "Te damos la más cordial bienvenida a: <br><b>HERA MOVIL</b><br><br>En este tutorial encontraras una explicación general del uso de la aplicación que a continuación es puesta a tu disposición con el objetivo de que puedas consultar tu importe de nómina cada semana.<br><br>Una aplicación elaborada por <a>Ghost Enterprise</a>",
       image: "../../assets/imgs/sliderTutorial.png",
     },
     {
       title: "Seguridad:",
-      description: "La <b>seguridad</b> de tu información es prioridad para nosotros. <br> Te recomendamos preservar el usuario y contraseña que se te asigno, recuerda que estos son esenciales para acceder a la aplicación.",
+      description: "La <b>seguridad</b> de tu información es prioridad para nosotros. <br> Te recomendamos conservar el usuario y contraseña que se te asignó, recuerda que estos son esenciales para acceder a la aplicación.",
       image: "../../assets/imgs/sliderTutorial2.png",
     },
     {
       title: "Inicio de Sesión:",
-      description: "En la pantalla número <b>(1)</b> te encontraras con la interfaz de Login la cual requerirá su <b>Usuario</b> y <b>Contraseña</b> para poder acceder a la aplicación.",
+      description: "En la pantalla número <b>(1)</b> te encontrarás con la interfaz de Login la cual requerirá tu <b>Usuario</b> y <b>Contraseña</b> para poder acceder a la aplicación.",
       image: "../../assets/imgs/slider1.png",
     },
     {
@@ -48,8 +48,8 @@ export class TutorialPage {
       image: "../../assets/imgs/slider5.png",
     },
     {
-      title: "Calculos Extras",
-      description: "Esta página es de vital importancia dado que en ella podrá calcular el importe por determinado número de <b>Horas Dobles, Horas Triples</b> y el Importe por <b>Rebases</b> ingresando la informacion que se te solicita.",
+      title: "Cálculos Extras",
+      description: "Esta página es de vital importancia dado que en ella podrá calcular el importe por determinado número de <b>Horas Dobles, Horas Triples</b> y el Importe por <b>Rebases</b> ingresando la información que se te solicita.",
       image: "../../assets/imgs/slider6.png",
     }
   ];
