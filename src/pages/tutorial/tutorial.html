@@ -1,46 +1,48 @@
-
 <ion-content padding>
 
     <ion-slides pager>
-  
-      <!-- Código para crear slides -->
+
+        <!-- Código para crear slides -->
         <ion-slide *ngFor="let slide of slides">
-          <ion-toolbar>
-  
-            <ion-buttons end>
-              <button ion-button color="primary"
-                      (click)="saltar_tutorial()">Saltar</button>
-            </ion-buttons>
-  
-          </ion-toolbar>
-  
-          <img [src]="slide.image" class="slide-image"/>
-          <h2 class="slide-title" [innerHTML]="slide.title"></h2>
-          <p [innerHTML]="slide.description"></p>
+            <ion-toolbar>
+                <ion-buttons end>
+                    <button ion-button color="primary" (click)="saltar_tutorial()">Saltar</button>
+                </ion-buttons>
+            </ion-toolbar>
+            <img [src]="slide.image" class="slide-image" />
+            <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+            <p [innerHTML]="slide.description"></p>
+            <p [innerHTML]="slide.vinetas"></p>
+            <!-- <div style="text-align: left">
+                <ul>
+                    <li type="circle">Esto es un tipo de punto.
+                        <li type="square">Este es otro.
+                            <li type="disc">Y este es otro diferente.
+                </ul>
+            </div> -->
         </ion-slide>
         <!-- Fin del ngFor -->
-  
+
         <!-- Ultimo Slide -->
         <ion-slide>
-          <ion-toolbar>
-          </ion-toolbar>
-  
-          <img src="../../assets/imgs/logo1.png" class="slide-image"/>
-          <h2 class="slide-title">¿Listo para empezar?</h2>
-          <p>Si las dudas persisten acerca de tu pago, podras acudir al departamento de nominas para posibles aclaraciones, <br><b>Pero no sin antes revisar adecuadamente tus calculos</b></p>
-          <p><b>Vuelve las veces que necesites recordar algo :)</b></p>
-          <button ion-button large clear icon-right color="primary"
-                  (click)="saltar_tutorial()">
+            <ion-toolbar>
+            </ion-toolbar>
+
+            <img src="../../assets/imgs/logo1.png" class="slide-image" />
+            <h2 class="slide-title">¿Estás listo para empezar?</h2>
+            <p>Si las dudas persisten acerca de tu pago, podras acudir al departamento de nominas para posibles aclaraciones, <b>pero no sin antes revisar adecuadamente tus calculos.</b></p>
+            <p><b>Puedes volver las veces que necesites para recordar algo.</b></p>
+            <button ion-button large clear icon-right color="primary" (click)="saltar_tutorial()">
             Continuar
             <ion-icon name="arrow-forward"></ion-icon>
           </button>
-  
+
         </ion-slide>
         <!-- Fin del último slide -->
-  
-      </ion-slides>
-  
-  </ion-content>
+
+    </ion-slides>
+
+</ion-content>
 
 <!--<ion-slides pager>
 
